@@ -1,14 +1,18 @@
+# main_app.py
 import streamlit as st
-import home, course1
+import home
+import course1
 
-PAGES = {
-    "Home": home,
-    "Course 1": course1
-}
+def main():
+    st.sidebar.title('Navigation')
+    page = st.sidebar.selectbox("Choose a page", ["Home", "Course 1"])
 
-st.sidebar.title('Navigation')
-selection = st.sidebar.radio("Go to", list(PAGES.keys()))
+    if page == "Home":
+        home.show_page()
+    elif page == "Course 1":
+        course1.show_page()
+    elif page == "Course 2":
+        course2.show_page()
 
-page = PAGES[selection]
-page.app()
-
+if __name__ == "__main__":
+    main()
