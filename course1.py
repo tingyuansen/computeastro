@@ -45,10 +45,6 @@ st.code('''import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd''', language='python')
 
-    import matplotlib.pyplot as plt
-    import numpy as np
-    import pandas as pd
-
 
 # Call the app function
 app()
