@@ -92,7 +92,7 @@ feh_array = file['feh_array']''', language='python')
     import requests
     from io import BytesIO
 
-    response = requests.get('https://storage.cloud.google.com/computeastro/apogee_spectra_tutorial_week7b.npz')
+    response = requests.get('https://storage.googleapis.com/compute_astro/apogee_spectra_tutorial_week7b.npz')
     f = BytesIO(response.content)
     file = np.load(f, allow_pickle=True)
     
