@@ -1,9 +1,9 @@
 import streamlit as st
-import home, lecture1_linear_regression
+import home, course1
 
 PAGES = {
     "Home": home,
-    "Linear Regression Tutorial": lecture1_linear_regression
+    "Course 1": course1
 }
 
 st.sidebar.title('Navigation')
