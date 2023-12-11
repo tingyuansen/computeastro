@@ -41,7 +41,7 @@ Let's dive in and turn the theoretical knowledge you've acquired into practical 
 
     st.markdown(r'''Setting up the environment''')
 
-st.code('''import matplotlib.pyplot as plt
+    st.code('''import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd''', language='python')
 
