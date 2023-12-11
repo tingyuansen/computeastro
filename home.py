@@ -26,10 +26,11 @@ def app():
     ''')
 
     # Citation and Bibliography Section
-    st.header('Citation and Bibliography')
+    st.header('How to Cite This Work')
     st.write('''
+    This course represents a significant effort on my part to bring advanced concepts in Astro-Statistics and Astro-Machine-Learning to a wider audience. If you find this course useful for your research or teaching, please consider cite this work. Your citation not only recognizes my effort but also helps to disseminate this knowledge to a broader community.
+
+    **Citation Format**:
     **Yuan-Sen Ting**. (2023). *A Beginner Guide to Astro-Statistics and Astro-Machine-Learning*. Australia National University. Available at [computeastro.streamlit.app](https://computeastro.streamlit.app/)
     ''')
 
-# Call the app function
-app()
