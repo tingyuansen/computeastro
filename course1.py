@@ -92,9 +92,9 @@ feh_array = file['feh_array']''', language='python')
     import requests
     from io import BytesIO
 
-    response = requests.get('https://www.mso.anu.edu.au/~yting/Teaching/ASTR4004_Course_Material/apogee_spectra_tutorial_week7b.npz')
-    with BytesIO(response.content) as f:
-        file = np.load(f, allow_pickle=True)
+    response = requests.get('https://drive.google.com/file/d/1aG0Gm7g-FT2jvCvD3oMhcCzMrIWkNBQy/view?usp=drive_link')
+    f = BytesIO(response.content)
+    file = np.load(f, allow_pickle=True)
     
     # Extract spectral data
     # `spectrum_array` contains the spectra for 6500 stars
@@ -112,7 +112,8 @@ feh_array = file['feh_array']''', language='python')
     # Note: These won't be used in our regression model for this tutorial
     logg_array = file['logg_array']
     feh_array = file['feh_array']
-
+    f.close()
+    
     st.markdown(r'''## Visualizing a Sample Spectrum
 
 Before diving into the intricacies of machine learning models, it's beneficial to understand the kind of data we are working with. Visualization is an excellent tool for this. A simple plot can reveal patterns or anomalies in the data that might not be immediately obvious from the raw data alone.
