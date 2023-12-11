@@ -1,7 +1,7 @@
 # home.py
 import streamlit as st
 
-def app():
+def show_page():
     # Page Title
     st.title('A Beginner Guide to Astro-Statistics and Astro-Machine-Learning')
 
@@ -34,3 +34,6 @@ def app():
     **Yuan-Sen Ting**. (2023). *A Beginner Guide to Astro-Statistics and Astro-Machine-Learning* Available at [computeastro.streamlit.app](https://computeastro.streamlit.app/)
     ''')
 
+# This ensures that if someone runs this script directly, it shows the page content.
+if __name__ == "__main__":
+    show_page()
