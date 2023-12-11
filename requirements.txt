@@ -2,3 +2,5 @@ streamlit
 matplotlib
 numpy
 pandas
+requests
+io
