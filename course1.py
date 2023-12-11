@@ -92,7 +92,7 @@ feh_array = file['feh_array']''', language='python')
     import requests
     from io import BytesIO
 
-    response = requests.get('https://drive.google.com/file/d/1aG0Gm7g-FT2jvCvD3oMhcCzMrIWkNBQy/view?usp=drive_link')
+    response = requests.get('https://www.mso.anu.edu.au/~yting/Teaching/ASTR4004_Course_Material/apogee_spectra_tutorial_week7b.npz')
     f = BytesIO(response.content)
     file = np.load(f, allow_pickle=True)
     
