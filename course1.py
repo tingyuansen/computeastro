@@ -90,7 +90,7 @@ logg_array = file['logg_array']
 feh_array = file['feh_array']''', language='python')
 
     # Read data from the file
-    file = np.load('apogee_spectra_tutorial_week7b.npz')
+    file = np.load('https://www.mso.anu.edu.au/~yting/Teaching/ASTR4004_Course_Material/apogee_spectra_tutorial_week7b.npz')
     
     # Extract spectral data
     # `spectrum_array` contains the spectra for 6500 stars
