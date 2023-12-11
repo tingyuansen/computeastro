@@ -38,12 +38,6 @@ Upon completing this lab, you should gain expertise in:
 Let's dive in and turn the theoretical knowledge you've acquired into practical skills for tackling real-world data science challenges!
 ''')
 
-st.markdown(r'''Setting up the environment''')
-
-st.code('''import matplotlib.pyplot as plt
-import numpy as np
-import pandas as pd''', language='python')
-
 
 
 # Call the app function
