@@ -1,6 +1,6 @@
 import streamlit as st
 
-def app():
+def show_page():
 
     st.markdown(r'''# Linear Regression
 
@@ -838,5 +838,6 @@ Thank you for following along.
 ''')
 
 
-# Call the app function
-app()
+# This ensures that if someone runs this script directly, it shows the page content.
+if __name__ == "__main__":
+    show_page()
