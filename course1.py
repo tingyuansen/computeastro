@@ -45,6 +45,10 @@ Let's dive in and turn the theoretical knowledge you've acquired into practical 
 import numpy as np
 import pandas as pd''', language='python')
 
+    import matplotlib.pyplot as plt
+    import numpy as np
+    import pandas as pd
+
 
 # Call the app function
 app()
