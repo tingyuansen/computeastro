@@ -199,6 +199,7 @@ These helper functions enable us to visually assess how well the K-means algorit
 ''')
 
     st.code('''def plot_data_and_centroids(data, centroids, redness=None):
+    
     plt.figure(figsize=(8,8))
     
     br_cmap = mcol.LinearSegmentedColormap.from_list("MyCmapName",["b","r"])
@@ -208,9 +209,10 @@ These helper functions enable us to visually assess how well the K-means algorit
         assert len(redness) == data.shape[0]
         assert all(_ >= 0 and _ <= 1 for _ in redness)
         c = redness
+        plt.scatter(data[:, 0], data[:, 1], c=c, s=0.1, alpha=0.3, linewidths=2, cmap=br_cmap, label="Data points")
     else:
         c = 'g'
-    plt.scatter(data[:, 0], data[:, 1], c=c, s=0.1, alpha=0.3, linewidths=2, cmap=br_cmap, label="Data points")
+        plt.scatter(data[:, 0], data[:, 1], c=c, s=0.1, alpha=0.3, linewidths=2, label="Data points")
     
     # Plotting the centroids with different colors
     centroid_colors = ['b', 'r']
@@ -227,6 +229,7 @@ plot_data_and_centroids(data, C_0)
 ''', language='python')
 
     def plot_data_and_centroids(data, centroids, redness=None):
+        
         fig, ax = plt.subplots(figsize=(8,8))
         
         br_cmap = mcol.LinearSegmentedColormap.from_list("MyCmapName",["b","r"])
@@ -236,9 +239,10 @@ plot_data_and_centroids(data, C_0)
             assert len(redness) == data.shape[0]
             assert all(_ >= 0 and _ <= 1 for _ in redness)
             c = redness
+            scatter = ax.scatter(data[:, 0], data[:, 1], c=c, s=0.1, alpha=0.3, linewidths=2, cmap=br_cmap, label="Data points")
         else:
             c = 'g'
-        scatter = ax.scatter(data[:, 0], data[:, 1], c=c, s=0.1, alpha=0.3, linewidths=2, cmap=br_cmap, label="Data points")
+            scatter = ax.scatter(data[:, 0], data[:, 1], c=c, s=0.1, alpha=0.3, linewidths=2, label="Data points")
         
         # Plotting the centroids with different colors
         centroid_colors = ['b', 'r']
@@ -377,6 +381,7 @@ for i in range(iterations):
     centroids = update_step(data, labels, K)
 
 # Plotting the inertia values from iteration 0
+plt.figure()
 plt.title("Inertia Values from Iteration 0")
 plt.xlabel("Number of Updates")
 plt.ylabel("Inertia")
@@ -384,6 +389,7 @@ plt.plot(inertia_values)
 plt.show()
 
 # Plotting the inertia values starting from iteration 1
+plt.figure()
 plt.title("Inertia Values from Iteration 1")
 plt.xlabel("Number of Updates")
 plt.ylabel("Inertia")
@@ -391,8 +397,6 @@ plt.plot(inertia_values[1:])
 plt.show()
 ''', language='python')
 
-    fig, ax = plt.subplots()
-    
     # Assuming `data` is your input data
     # Initialize centroids
     initial_centroids = C_0  
@@ -421,6 +425,8 @@ plt.show()
         centroids = update_step(data, labels, K)
     
     # Plotting the inertia values from iteration 0
+    fig, ax = plt.subplots()
+    
     ax.set_title("Inertia Values from Iteration 0")
     ax.set_xlabel("Number of Updates")
     ax.set_ylabel("Inertia")
@@ -428,11 +434,14 @@ plt.show()
     st.pyplot(fig)
     
     # Plotting the inertia values starting from iteration 1
+    fig, ax = plt.subplots()
+    
     ax.set_title("Inertia Values from Iteration 1")
     ax.set_xlabel("Number of Updates")
     ax.set_ylabel("Inertia")
     ax.plot(inertia_values[1:])
     st.pyplot(fig)
+    
     
 
     st.markdown(r'''
