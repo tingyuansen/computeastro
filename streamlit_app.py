@@ -6,7 +6,7 @@ import lecture2_logistic_regression
 
 def main():
     st.sidebar.title('Course Content')
-    page = st.sidebar.radio("Go to", ["Home", "Chaper 1: Linear Regression", "Chaper 1: Logistic Regression"])
+    page = st.sidebar.radio("Go to", ["Home", "Chaper 1: Linear Regression", "Chaper 2: Logistic Regression"])
 
     if page == "Home":
         home.show_page()
