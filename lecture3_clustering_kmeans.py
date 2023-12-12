@@ -112,7 +112,14 @@ plt.ylabel("Normalized [Mg/Fe]")''', language='python')
     fig, ax = plt.subplots()
     
     # load data
-    data = np.load("apogee_sample_tutorial_week8b.npz")
+    import requests
+    from io import BytesIO
+
+    # Read data from the file
+    response = requests.get('https://storage.googleapis.com/compute_astro/apogee_asteroseismic_sample_tutorial_week8a.npz')
+    f = BytesIO(response.content)
+    data = np.load(f, allow_pickle=True)
+    
     feh = data["feh"]
     mgfe = data["mgfe"]
     
