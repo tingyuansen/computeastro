@@ -21,7 +21,7 @@ def main():
         lecture3_clustering_kmeans.show_page()
     elif page == "Chaper 3: Clustering - Gaussian Mixture Models":
         lecture3_clustering_gmm.show_page()
-    elif page == Chaper 4: Dimension Reduction - Principal Component Analysis":
+    elif page == "Chaper 4: Dimension Reduction - Principal Component Analysis":
         lecture4_pca.show_page()
         
 if __name__ == "__main__":
