@@ -6,6 +6,7 @@ import lecture2_logistic_regression
 import lecture3_clustering_kmeans
 import lecture3_clustering_gmm
 import lecture4_pca
+import lecture7_gaussian_process_regression
 import lecture9_sampling
 
 def main():
