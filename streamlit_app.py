@@ -29,7 +29,7 @@ def main():
     elif page == "Chaper 7: Gaussian Process Regression":
         lecture7_gaussian_process_regression.show_page()
     elif page == "Chaper 8: Gaussian Process Classification":
-        lecture7_gaussian_process_classification.show_page()
+        lecture8_gaussian_process_classification.show_page()
     elif page == "Chaper 9: Sampling":
         lecture9_sampling.show_page()
         
