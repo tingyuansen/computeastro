@@ -42,11 +42,15 @@ Let's dive in and turn the theoretical knowledge you've acquired into practical 
 
     st.code('''import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd''', language='python')
+import pandas as pd
+
+%matplotlib inline''', language='python')
 
     import matplotlib.pyplot as plt
     import numpy as np
     import pandas as pd
+    
+    
 
     st.markdown(r'''## The Dataset
 
@@ -92,10 +96,11 @@ feh_array = file['feh_array']''', language='python')
     import requests
     from io import BytesIO
 
+    # Read data from the file
     response = requests.get('https://storage.googleapis.com/compute_astro/apogee_spectra_tutorial_week7b.npz')
     f = BytesIO(response.content)
     file = np.load(f, allow_pickle=True)
-    
+
     # Extract spectral data
     # `spectrum_array` contains the spectra for 6500 stars
     spectra = file['spectrum_array']
@@ -112,8 +117,9 @@ feh_array = file['feh_array']''', language='python')
     # Note: These won't be used in our regression model for this tutorial
     logg_array = file['logg_array']
     feh_array = file['feh_array']
-    f.close()
     
+    
+
     st.markdown(r'''## Visualizing a Sample Spectrum
 
 Before diving into the intricacies of machine learning models, it's beneficial to understand the kind of data we are working with. Visualization is an excellent tool for this. A simple plot can reveal patterns or anomalies in the data that might not be immediately obvious from the raw data alone.
@@ -135,10 +141,10 @@ plt.title('Sample Spectrum from APOGEE Dataset')
 plt.show()
 ''', language='python')
 
-    fig, ax = plt.subplots()
     # Plot a portion of the normalized spectrum for the first star
     # We are taking only the first 1000 data points for easier visualization
-    plt.figure(figsize=(10, 5)) 
+    fig, ax = plt.subplots(figsize=(10, 5))
+    
     ax.plot(wavelength[:1000], spectra[0][:1000])
     
     # Adding labels and title for better understanding of the plot
@@ -147,8 +153,6 @@ plt.show()
     ax.set_title('Sample Spectrum from APOGEE Dataset')
     
     # Show the plot
-    
-    
     st.pyplot(fig)
     
     
@@ -186,6 +190,7 @@ plt.gca().invert_xaxis()
 plt.gca().invert_yaxis()''', language='python')
 
     fig, ax = plt.subplots()
+    
     # Create a scatter plot of Surface Gravity vs Effective Temperature, color-coded by Metallicity
     scatter = ax.scatter(teff_array, logg_array, c=feh_array, cmap='jet', s=1)
     
@@ -250,6 +255,7 @@ print("Shape of target array t:", t.shape)
     t = teff_array
     st.write("Shape of target array t:", t.shape)
     
+    
 
     st.markdown(r'''## Data Splitting: Training, Validation, and Test Sets
 
@@ -282,6 +288,7 @@ Phi_train, Phi_test, t_train, t_test = train_test_split(Phi, t, test_size=0.2)
     # Split the data into training and test sets
     Phi_train, Phi_test, t_train, t_test = train_test_split(Phi, t, test_size=0.2)
     
+    
 
     st.markdown(r'''Excellent! Now that you've prepared your training and test sets, it's time to dive into the actual model fitting. The cell introduces the formula for computing the weights for linear regression using Maximum Likelihood Estimation (MLE), under certain assumptions.
 
@@ -311,6 +318,8 @@ w_ml = np.linalg.inv(Phi_train.T @ Phi_train) @ Phi_train.T @ t_train''', langua
 
     # Compute the Maximum Likelihood weights using the analytical solution
     w_ml = np.linalg.inv(Phi_train.T @ Phi_train) @ Phi_train.T @ t_train
+    
+    
 
     st.markdown(r'''Fantastic, you're at the crucial step of testing the trained linear regression model on the test set. This part will provide insight into the model's performance and its generalizability to unseen data.
 
@@ -337,6 +346,7 @@ t_pred = Phi_test @ w_ml
 plt.scatter(t_test, t_pred, s=1)''', language='python')
 
     fig, ax = plt.subplots()
+    
     # Make predictions on the test set using the ML weights
     t_pred = Phi_test @ w_ml
     
@@ -378,6 +388,8 @@ print("Test RMSE: {{}:.2f{}}".format(test_RMSE))''', language='python')
     # Display the RMSE values
     st.write("Training RMSE: {:.2f}".format(train_RMSE))
     st.write("Test RMSE: {:.2f}".format(test_RMSE))
+    
+    
 
     st.markdown(r'''Excellent! You've reached an important milestone. Your model already shows promising results with a precision of around 130K for the effective temperature (Teff), which is an impressive feat given the simplified approach you've taken.
 
@@ -424,6 +436,7 @@ def w_ml_regularised(l):
     def w_ml_regularised(l):
         return np.linalg.inv(l * np.eye(Phi_train.shape[1]) + Phi_train.T @ Phi_train) @ Phi_train.T @ t_train
     
+    
 
     st.markdown(r'''Here we've picked a large value for $ \lambda $ to see how it affects the weights. When $ \lambda $ is large, we expect the weights to shrink toward zero, a phenomenon you can observe by comparing the norms `np.linalg.norm(w_ml)` and `np.linalg.norm(w_reg)`.
 
@@ -443,6 +456,7 @@ np.linalg.norm(w_ml), np.linalg.norm(w_reg)
     
     # Calculate norms of unregularized and regularized weights
     np.linalg.norm(w_ml), np.linalg.norm(w_reg)
+    
     
 
     st.markdown(r'''### Performing Hyperparameter Tuning
@@ -489,6 +503,7 @@ plt.legend()
 plt.show()''', language='python')
 
     fig, ax = plt.subplots()
+    
     # Define a range of log-scaled lambda values
     log_lambdas = np.linspace(-2, 2, 16)
     
@@ -517,8 +532,7 @@ plt.show()''', language='python')
     ax.plot(log_lambdas, results[:,1], 'r-', label='test')  # Test data
     ax.set_xlabel('log($\\lambda$)')
     ax.set_ylabel('RMSE')
-    plt.legend()
-    
+    ax.legend()
     st.pyplot(fig)
     
     
@@ -532,6 +546,8 @@ print("Best test RMSE: {{}:.2f{}}".format(np.min(results[:,1])))''', language='p
     best_lambda = pow(10, log_lambdas[np.argmin(results[:,1])])
     st.write("Best lambda: {:.2f}".format(best_lambda))
     st.write("Best test RMSE: {:.2f}".format(np.min(results[:,1])))
+    
+    
 
     st.markdown(r'''Congratulations on successfully applying regularization to your machine learning model! As you've noticed, the performance has improved significantly. The Root Mean Square Error (RMSE) for predicting effective temperature $T_{\mathrm{eff}}$ has been reduced to 100K, an excellent achievement.
 
@@ -562,6 +578,8 @@ While basis functions offer a powerful way to extend linear models, they do requ
 
     def phi_quadratic(x):    
         return np.hstack((x, x**2))
+    
+    
 
     st.markdown(r'''We will start with the case without regularisation.''')
 
@@ -602,6 +620,8 @@ print("RMSE with basis functions and without regularisation: Train {{}:.2f{}}, T
     test_rmse = np.sqrt(np.mean((t_test - t_test_pred)**2))
     
     st.write("RMSE with basis functions and without regularisation: Train {:.2f}, Test {:.2f}".format(train_rmse, test_rmse))
+    
+    
 
     st.markdown(r'''We've just seen how the addition of quadratic features to our linear model improved the training RMSE but worsened the test RMSE—a classic sign of overfitting. This is where regularization can play a significant role, especially when the feature space expands.
 
@@ -636,6 +656,7 @@ plt.show()
 ''', language='python')
 
     fig, ax = plt.subplots()
+    
     # Function to calculate the weight vector for a regularized linear regression
     def w_ml_regularised(l):
         return np.linalg.inv(l * np.eye(Phi_quad_train.shape[1]) + Phi_quad_train.T @ Phi_quad_train) @ Phi_quad_train.T @ t_train
@@ -659,9 +680,7 @@ plt.show()
     ax.plot(log_lambdas, results[:,1], 'r-', label='test')
     ax.set_xlabel('log($\\lambda$)')
     ax.set_ylabel('RMSE')
-    plt.legend()
-    
-    
+    ax.legend()
     st.pyplot(fig)
     
     
@@ -675,6 +694,8 @@ print("Best test RMSE: {{}:.2f{}}".format(np.min(results[:,1])))''', language='p
     best_lambda = pow(10, log_lambdas[np.argmin(results[:,1])])
     st.write("Best lambda: {:.2f}".format(best_lambda))
     st.write("Best test RMSE: {:.2f}".format(np.min(results[:,1])))
+    
+    
 
     st.markdown(r'''We find that although it does mitigate the problem of overfitting to some extent, it doesn't offer a significant improvement in test RMSE compared to the original linear model. This suggests that the addition of quadratic features might not be that beneficial for this specific problem. 
 
@@ -761,6 +782,7 @@ for i in range(Phi_test.shape[0]):
         pred_means[i] = Phi_test[i] @ m_N
         pred_vars[i] = 1/beta + Phi_test[i].T @ S_N @ Phi_test[i]
     
+    
 
     st.code('''# Convert predictive variance to standard deviation for plotting
 pred_stds = np.sqrt(pred_vars)
@@ -784,16 +806,16 @@ plt.title('Predictive Performance with Uncertainty')
 plt.legend()
 ''', language='python')
 
-    fig, ax = plt.subplots()
     # Convert predictive variance to standard deviation for plotting
     pred_stds = np.sqrt(pred_vars)
     
     # Create scatter plot
-    plt.figure(figsize=(7, 7))
+    fig, ax = plt.subplots(figsize=(7, 7))
+    
     scatter = ax.scatter(t_test, pred_means, c='blue', marker='o', label='Predictions')
     
     # Add error bars to indicate predictive uncertainty
-    plt.errorbar(t_test, pred_means, yerr=pred_stds, fmt='none', ecolor='gray', alpha=0.5)
+    ax.errorbar(t_test, pred_means, yerr=pred_stds, fmt='none', ecolor='gray', alpha=0.5)
     
     # Plot a line for perfect predictions
     min_val = min(np.min(t_test), np.min(pred_means))
@@ -804,8 +826,7 @@ plt.legend()
     ax.set_xlabel('True values')
     ax.set_ylabel('Predicted means')
     ax.set_title('Predictive Performance with Uncertainty')
-    plt.legend()
-    
+    ax.legend()
     st.pyplot(fig)
     
     
@@ -837,7 +858,5 @@ We have learned that:
 Thank you for following along.
 ''')
 
-
-# This ensures that if someone runs this script directly, it shows the page content.
-if __name__ == "__main__":
+if __name__ == '__main__':
     show_page()
