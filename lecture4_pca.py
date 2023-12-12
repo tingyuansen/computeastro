@@ -48,6 +48,10 @@ images = data["images"]
 # Check the shape of the loaded data
 print("Shape of the loaded images:", images.shape)''', language='python')
 
+    # load data
+    import requests
+    from io import BytesIO
+    
     # Load the dataset using np.load
     response = requests.get('https://storage.googleapis.com/compute_astro/pokemon_sample_tutorial_week9a.npz')
     f = BytesIO(response.content)
