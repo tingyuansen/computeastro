@@ -8,7 +8,7 @@ import lecture3_clustering_gmm
 
 def main():
     st.sidebar.title('Course Content')
-    page = st.sidebar.radio("Go to", ["Home", "Chaper 1: Linear Regression", "Chaper 2: Logistic Regression", "Chaper 3: Clustering - K-Means", "Chaper 3: Clustering - Gaussian Mixture Models"])
+    page = st.sidebar.radio("Go to", ["Home", "Chaper 1: Linear Regression", "Chaper 2: Logistic Regression", "Chaper 3: Clustering - K-Means", "Chaper 3: Clustering - Gaussian Mixture Models", "Chaper 4: Dimension Reduction - Principal Component Analysis"])
 
     if page == "Home":
         home.show_page()
@@ -20,6 +20,8 @@ def main():
         lecture3_clustering_kmeans.show_page()
     elif page == "Chaper 3: Clustering - Gaussian Mixture Models":
         lecture3_clustering_gmm.show_page()
-
+    elif page == Chaper 4: Dimension Reduction - Principal Component Analysis":
+        lecture4_pca.show_page()
+        
 if __name__ == "__main__":
     main()
