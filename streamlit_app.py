@@ -5,6 +5,7 @@ import lecture1_linear_regression
 import lecture2_logistic_regression
 import lecture3_clustering_kmeans
 import lecture3_clustering_gmm
+import lecture4_pca
 
 def main():
     st.sidebar.title('Course Content')
