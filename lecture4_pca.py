@@ -48,9 +48,10 @@ images = np.loadtxt('pokemon_sample_tutorial_week9a.csv')
 print("Shape of the loaded images:", images.shape)''', language='python')
 
     # Load the dataset using np.loadtxt
-    response = requests.get('https://storage.googleapis.com/compute_astro/pokemon_sample_tutorial_week9a.csv')
+    response = requests.get('https://storage.googleapis.com/compute_astro/pokemon_sample_tutorial_week9a.npz')
     f = BytesIO(response.content)
-    images = np.loadtxt(f)
+    data = np.load(f, allow_pickle=True)
+    images = data['images']
     
     # Check the shape of the loaded data
     st.write("Shape of the loaded images:", images.shape)
