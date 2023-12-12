@@ -116,7 +116,7 @@ plt.ylabel("Normalized [Mg/Fe]")''', language='python')
     from io import BytesIO
 
     # Read data from the file
-    response = requests.get('https://storage.googleapis.com/compute_astro/apogee_asteroseismic_sample_tutorial_week8a.npz')
+    response = requests.get('https://storage.googleapis.com/compute_astro/apogee_sample_tutorial_week8b.npz')
     f = BytesIO(response.content)
     data = np.load(f, allow_pickle=True)
     
