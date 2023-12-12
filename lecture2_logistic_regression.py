@@ -82,7 +82,7 @@ print(X.shape)
     # Read data from the file
     response = requests.get('https://storage.googleapis.com/compute_astro/apogee_asteroseismic_sample_tutorial_week8a.npz')
     f = BytesIO(response.content)
-    file = np.load(f, allow_pickle=True)
+    data = np.load(f, allow_pickle=True)
     
     X = data["data"]  # Feature matrix
     t = data["label"]  # Labels
