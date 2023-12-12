@@ -42,16 +42,17 @@ Before diving into PCA, we need to load our dataset. In this section, we'll expl
 ''')
 
     st.code('''# Load the dataset using np.loadtxt
-images = np.loadtxt('pokemon_sample_tutorial_week9a.csv')
+data = np.load('pokemon_sample_tutorial_week9a.npz')
+images = data["images"]
 
 # Check the shape of the loaded data
 print("Shape of the loaded images:", images.shape)''', language='python')
 
-    # Load the dataset using np.loadtxt
+    # Load the dataset using np.load
     response = requests.get('https://storage.googleapis.com/compute_astro/pokemon_sample_tutorial_week9a.npz')
     f = BytesIO(response.content)
     data = np.load(f, allow_pickle=True)
-    images = data['images']
+    images = data["images"]
     
     # Check the shape of the loaded data
     st.write("Shape of the loaded images:", images.shape)
