@@ -6,3 +6,4 @@ scikit-learn
 tqdm
 statsmodels
 seaborn
+torch
