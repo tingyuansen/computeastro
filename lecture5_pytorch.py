@@ -643,11 +643,11 @@ $$
 
 Here, $\eta$ represents the learning rate, which can be fixed or dynamic (i.e., changing at each step), denoted by $\eta_{k}$.''')
 
-    st.code('''Image('https://www.mso.anu.edu.au/~yting/Teaching/Gradient_Descent_to_Winner.jpg', width=400)''', language='python')
+    st.code('''Image('image/Gradient_Descent_to_Winner.jpg', width=400)''', language='python')
 
     fig, ax = plt.subplots()
     
-    st.image('https://www.mso.anu.edu.au/~yting/Teaching/Gradient_Descent_to_Winner.jpg', width=400)
+    st.image('image/Gradient_Descent_to_Winner.jpg', width=400)
     
     
 
@@ -775,11 +775,11 @@ One downside of autodifferentiation is that it is completely numerical, and henc
 
     st.markdown(r'''## Backpropagation and Chain Rule''')
 
-    st.code('''Image("https://www.mso.anu.edu.au/~yting/Teaching/Autodifferentiation_Xkcd.png", width=560)''', language='python')
+    st.code('''Image("image/Autodifferentiation_Xkcd.png", width=560)''', language='python')
 
     fig, ax = plt.subplots()
     
-    st.image("https://www.mso.anu.edu.au/~yting/Teaching/Autodifferentiation_Xkcd.png", width=560)
+    st.image("image/Autodifferentiation_Xkcd.png", width=560)
     
     
 
