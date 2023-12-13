@@ -8,6 +8,7 @@ import lecture3_clustering_gmm
 import lecture4_pca
 import lecture5_pytorch
 import lecture5_multilayer_perceptron
+import lecture6_autoencoder
 import lecture7_gaussian_process_regression
 import lecture8_gaussian_process_classification
 import lecture9_sampling
