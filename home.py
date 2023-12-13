@@ -8,7 +8,7 @@ def show_page():
     video_url = 'https://www.youtube.com/watch?v=YG0C0r21VAw'
 
     # Embed the external HTML page
-    external_url = "https://www.mso.anu.edu.au/~yting/Teaching/ASTR4004_8004/Week7b_Linear_Regression/#0"  # Replace with the actual URL
+    external_url = "http://www.mso.anu.edu.au/~yting/Teaching/ASTR4004_8004/Week7b_Linear_Regression/#0"  # Replace with the actual URL
     iframe_html = f'<iframe src="{external_url}" width="100%" height="600" frameborder="0"></iframe>'
     components.html(iframe_html, height=600)
 
