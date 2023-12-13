@@ -6,15 +6,15 @@ def show_page():
 
     # Embed a YouTube Video
     st.subheader('Course Introduction Video')
+    pdf_file = 'https://storage.googleapis.com/compute_astro/Week7b_Linear_Regression.pdf'
     video_url = 'https://www.youtube.com/watch?v=YG0C0r21VAw'
-    st.markdown(f'<iframe width="560" height="315" src="{video_url}" frameborder="0"></iframe>', unsafe_allow_html=True)
+    st.markdown(f'<iframe width="560" height="315" src="{pdf_file}" frameborder="0"></iframe>', unsafe_allow_html=True)
 
     # Embed a PDF Viewer for Slides
     st.subheader('Course Slides')
-    pdf_file = 'https://github.com/tingyuansen/computeastro/blob/main/slide/Week7b_Linear_Regression.pdf'  # Replace with your PDF URL
+      # Replace with your PDF URL
     components.html(
-        f'<iframe src="{pdf_file}" style="width:100%; height:480px;" frameborder="0"></iframe>',
-        height=480,
+        f'<iframe src="{pdf_file}" style="width:100%" frameborder="0"></iframe>'
     )
 
     # Page Title
