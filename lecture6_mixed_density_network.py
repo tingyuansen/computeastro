@@ -582,7 +582,7 @@ plt.show()''', language='python')
     # Load the dataset using np.load
     response = requests.get('https://storage.googleapis.com/compute_astro/lithium_sample_tutorial_week10a.npz')
     f = BytesIO(response.content)
-    data = np.load(f, allow_pickle=True)
+    data = np.load(f, allow_pickle=False)
     
     # Extract individual data columns for age, effective temperature, and Lithium abundance
     age = data['age']
