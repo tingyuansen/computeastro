@@ -6,7 +6,7 @@ def show_page():
 
     # Embed a YouTube Video
     st.subheader('Course Introduction Video')
-    st.video('https://www.youtube.com/watch?v=YG0C0r21VAw')  # Replace [Your-Video-ID] with the actual ID
+    st.video('https://www.youtube.com/watch?v=YG0C0r21VAw', width=500)  # Replace [Your-Video-ID] with the actual ID
 
     # Embed a PDF Viewer for Slides
     st.subheader('Course Slides')
