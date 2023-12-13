@@ -8,11 +8,10 @@ def show_page():
     video_url = 'https://www.youtube.com/watch?v=YG0C0r21VAw'
 
     # Embed the external HTML page
-    external_url = "http://www.mso.anu.edu.au/~yting/Teaching/ASTR4004_8004/Week7b_Linear_Regression/#0"  # Replace with the actual URL
-    iframe_html = f'<iframe src="{video_url}" width="100%" height="600" frameborder="0"></iframe>'
-    components.html(iframe_html, height=600)
+    iframe_html = f' <iframe src="https://www.slideshare.net/slideshow/embed_code/key/l59x3CC7iaHQ2t?hostedIn=slideshare&page=upload" width="476" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>'
+    components.html(iframe_html, height=400)
 
-
+   
     # Page Title
     st.title('A Beginner Guide to Astro-Statistics and Astro-Machine-Learning')
 
