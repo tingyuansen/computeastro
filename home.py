@@ -12,7 +12,7 @@ def show_page():
     pdf_file = 'https://storage.googleapis.com/compute_astro/Week7b_Linear_Regression.pdf'  # Replace with your PDF URL
     google_docs_viewer_url = f"https://docs.google.com/gview?url={pdf_file}&embedded=true"
     components.html(
-        f'<iframe src="{google_docs_viewer_url}" style="width:100%; height:480px;" frameborder="0"></iframe>',
+        f'<iframe src="{google_docs_viewer_url}" style="width:100%; height:480px; border:none;" frameborder="0" allowfullscreen></iframe>',
         height=480,
     )
     
