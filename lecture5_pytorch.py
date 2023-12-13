@@ -89,7 +89,6 @@ rcParams['font.weight'] = 300  # font weight''', language='python')
     import pandas as pd  # data manipulation library
     import seaborn as sns  # data visualization library
     from cycler import cycler
-    from IPython.display import Video, Image  # display videos and images in Jupyter notebook
     
     # Define the value of Pi for pytorch as it doesn't have a pre-defined value
     torch_pi = 3.1415916
