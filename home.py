@@ -1,7 +1,16 @@
 # home.py
 import streamlit as st
+import streamlit.components.v1 as components
 
 def show_page():
+
+    # Embed a YouTube Video
+    st.subheader('Course Introduction Video')
+    st.video('https://www.youtube.com/watch?v=YG0C0r21VAw')  # Replace [Your-Video-ID] with the actual ID
+
+    # Embed a PDF Viewer for Slides
+    st.subheader('Course Slides')
+
     # Page Title
     st.title('A Beginner Guide to Astro-Statistics and Astro-Machine-Learning')
 
