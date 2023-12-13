@@ -7,21 +7,11 @@ def show_page():
     # Embed a YouTube Video
     video_url = 'https://www.youtube.com/watch?v=YG0C0r21VAw'
 
-    # Embed a PDF Viewer using Google Docs Viewer
-    st.subheader('Course Slides Testing 1')
-    pdf_file = 'https://storage.googleapis.com/compute_astro/Week7b_Linear_Regression.pdf'  # Replace with your PDF URL
-    google_docs_viewer_url = f"https://docs.google.com/gview?url={pdf_file}&embedded=true"
-    components.html(
-        f'<iframe src="{google_docs_viewer_url}" style="width:100%; height:480px; border:none;" frameborder="0" allowfullscreen></iframe>',
-        height=480,
-    )
-    
-    # Embed a PDF Viewer for Slides
-    st.subheader('Course Slides')
-      # Replace with your PDF URL
-    components.html(
-        f'<iframe src="{pdf_file}" style="width:100%" frameborder="0"></iframe>'
-    )
+    # Embed the external HTML page
+    external_url = "https://www.mso.anu.edu.au/~yting/Teaching/ASTR4004_8004/Week7b_Linear_Regression"  # Replace with the actual URL
+    iframe_html = f'<iframe src="{external_url}" width="100%" height="600" frameborder="0"></iframe>'
+    components.html(iframe_html, height=600)
+
 
     # Page Title
     st.title('A Beginner Guide to Astro-Statistics and Astro-Machine-Learning')
