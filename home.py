@@ -8,7 +8,7 @@ def show_page():
     st.subheader('Course Introduction Video')
     pdf_file = 'https://storage.googleapis.com/compute_astro/Week7b_Linear_Regression.pdf'
     video_url = 'https://www.youtube.com/watch?v=YG0C0r21VAw'
-    st.markdown(f'<iframe width="560" height="315" src="{pdf_file}" frameborder="0"></iframe>', unsafe_allow_html=True)
+    st.markdown(f'<iframe width="560" height="315" src="{pdf_file}" frameborder="0"></iframe>')
 
     # Embed a PDF Viewer for Slides
     st.subheader('Course Slides')
