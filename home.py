@@ -10,6 +10,11 @@ def show_page():
 
     # Embed a PDF Viewer for Slides
     st.subheader('Course Slides')
+    pdf_file = 'slide/Week7b_Linear_Regression.pdf'  # Replace with your PDF URL
+    components.html(
+        f"""<iframe src="{pdf_file}" width="700" height="480" allow="autoplay"></iframe>""",
+        height=480,
+    )
     
 
     # Page Title
