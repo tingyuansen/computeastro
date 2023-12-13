@@ -855,7 +855,9 @@ plt.tight_layout()
 By analyzing these plots, one can obtain a holistic view of how $ A_{\rm Li} $ varies with $T_{\rm eff}$ and understand the underlying uncertainties in our model's predictions as well as the evolution of Lithium.
 ''')
 
-    st.markdown(r'''## Conclusion
+    st.markdown(r'''---
+    
+## Conclusion
 
 In this tutorial, we embarked on an exploration of Mixture Density Networks starting from foundational concepts to advanced applications. 
 
