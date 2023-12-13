@@ -15,7 +15,7 @@ import lecture10_markov_chain_monte_carlo
 
 def main():
     st.sidebar.title('Course Content')
-    page = st.sidebar.radio("Go to", ["Home", "Chaper 1: Linear Regression", "Chaper 2: Logistic Regression", "Chaper 3: Clustering - K-Means", "Chaper 3: Clustering - Gaussian Mixture Models", "Chaper 4: Dimension Reduction - Principal Component Analysis", "Chaper 5: Neural Networks - Pytorch Basics", "Chaper 5: Neural Networks - Multilayer Perceptron", "Chaper 5: Neural Networks - Autoencoder", "Chaper 7: Gaussian Process Regression", "Chaper 8: Gaussian Process Classification", "Chaper 9: Sampling", "Chaper 10: Markov Chain Monte Carlo"])
+    page = st.sidebar.radio("Go to", ["Home", "Chaper 1: Linear Regression", "Chaper 2: Logistic Regression", "Chaper 3: Clustering - K-Means", "Chaper 3: Clustering - Gaussian Mixture Models", "Chaper 4: Dimension Reduction - Principal Component Analysis", "Chaper 5: Neural Networks - Pytorch Basics", "Chaper 5: Neural Networks - Multilayer Perceptron", "Chaper 6: Neural Networks - Autoencoder", "Chaper 7: Gaussian Process Regression", "Chaper 8: Gaussian Process Classification", "Chaper 9: Sampling", "Chaper 10: Markov Chain Monte Carlo"])
 
     if page == "Home":
         home.show_page()
