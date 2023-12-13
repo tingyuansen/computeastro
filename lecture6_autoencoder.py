@@ -708,8 +708,7 @@ print("Shape of the loaded images:", images.shape)''', language='python')
     # Loading the galaxy images dataset
     response = requests.get('https://storage.googleapis.com/compute_astro/galaxy_sample_tutorial_week10a.npy')
     f = BytesIO(response.content)
-    data = np.load(f, allow_pickle=True)
-    images = data["images"]
+    images = np.load(f, allow_pickle=True)
     
     # Let's verify the shape of our loaded data to ensure everything's in order
     st.write("Shape of the loaded images:", images.shape)
