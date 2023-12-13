@@ -56,8 +56,15 @@ images = np.loadtxt('pokemon_sample_tutorial_week10a.csv')
 # Check the shape of the loaded data
 print("Shape of the loaded images:", images.shape)''', language='python')
 
-    # Load the dataset using np.loadtxt
-    images = np.loadtxt('pokemon_sample_tutorial_week10a.csv')
+    # load data
+    import requests
+    from io import BytesIO
+    
+    # Load the dataset using np.load
+    response = requests.get('https://storage.googleapis.com/compute_astro/pokemon_sample_tutorial_week9a.npz')
+    f = BytesIO(response.content)
+    data = np.load(f, allow_pickle=True)
+    images = data["images"]
     
     # Check the shape of the loaded data
     st.write("Shape of the loaded images:", images.shape)
@@ -699,7 +706,10 @@ images = np.load('galaxy_sample_tutorial_week10a.npy')
 print("Shape of the loaded images:", images.shape)''', language='python')
 
     # Loading the galaxy images dataset
-    images = np.load('galaxy_sample_tutorial_week10a.npy')
+    response = requests.get('https://storage.googleapis.com/compute_astro/galaxy_sample_tutorial_week10a.npy')
+    f = BytesIO(response.content)
+    data = np.load(f, allow_pickle=True)
+    images = data["images"]
     
     # Let's verify the shape of our loaded data to ensure everything's in order
     st.write("Shape of the loaded images:", images.shape)
