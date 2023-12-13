@@ -5,13 +5,17 @@ import streamlit.components.v1 as components
 def show_page():
 
     # Embed a YouTube Video
-    st.subheader('Course Introduction Video')
-    pdf_file = 'https://storage.googleapis.com/compute_astro/Week7b_Linear_Regression.pdf'
     video_url = 'https://www.youtube.com/watch?v=YG0C0r21VAw'
-    components.html(
-           f'<iframe width="560" height="315" src="{pdf_file}" frameborder="0"></iframe>'
-    )
 
+    # Embed a PDF Viewer using Google Docs Viewer
+    st.subheader('Course Slides')
+    pdf_file = 'slide/Week7b_Linear_Regression.pdf'  # Replace with your PDF URL
+    google_docs_viewer_url = f"https://docs.google.com/gview?url={pdf_file}&embedded=true"
+    components.html(
+        f'<iframe src="{google_docs_viewer_url}" style="width:100%; height:480px;" frameborder="0"></iframe>',
+        height=480,
+    )
+    
     # Embed a PDF Viewer for Slides
     st.subheader('Course Slides')
       # Replace with your PDF URL
