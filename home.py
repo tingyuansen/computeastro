@@ -4,14 +4,6 @@ import streamlit.components.v1 as components
 
 def show_page():
 
-    # Embed a YouTube Video
-    video_url = 'https://www.youtube.com/watch?v=YG0C0r21VAw'
-
-    # Embed the external HTML page
-    iframe_html = f' <iframe src="https://www.slideshare.net/slideshow/embed_code/key/l59x3CC7iaHQ2t?hostedIn=slideshare&page=upload" width="476" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>'
-    components.html(iframe_html, height=400)
-
-   
     # Page Title
     st.title('A Beginner Guide to Astro-Statistics and Astro-Machine-Learning')
 
