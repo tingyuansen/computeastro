@@ -12,7 +12,7 @@ def show_page():
     Course Slides
     ''')
     slideshare_embed_code = """
-        <iframe src="https://www.slideshare.net/slideshow/embed_code/key/l59x3CC7iaHQ2t" 
+        <iframe src="https://www.slideshare.net/slideshow/embed_code/key/2FRoyH4o8Op9Mm" 
                 width="700" height="394" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" 
                 style="border:0px solid #000; border-width:0px; margin-bottom:0px; max-width: 100%;" allowfullscreen> 
         </iframe> 
