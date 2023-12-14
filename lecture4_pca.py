@@ -4,9 +4,6 @@ import streamlit.components.v1 as components
 
 def show_page():
 
-    # Embed a YouTube Video
-    video_url = 'https://www.youtube.com/watch?v=YG0C0r21VAw'
-
     # Page Title
     st.title('Unsupervised Learning: Dimension Reduction - Principal Component Analysis')
 
