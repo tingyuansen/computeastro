@@ -15,11 +15,6 @@ import lecture8_gaussian_process_classification
 import lecture9_sampling
 import lecture10_markov_chain_monte_carlo
 
-import streamlit as st
-import home
-import tutorial1_linear_regression
-import lecture1_linear_regression
-# ... import other modules ...
 
 def main():
     st.sidebar.title('Course Content')
@@ -38,6 +33,11 @@ def main():
         if st.sidebar.button("Tutorial 1"):
             current_page = 'Tutorial 1'
 
+    # Chapter 1: Linear Regression
+    with st.sidebar.expander("Chapter 2: Supervised Learning - Logistic Regression"):
+        if st.sidebar.button("Lecture 2"):
+            current_page = 'Lecture 2'
+            
     # Chapter 2: Logistic Regression
     # ... similarly for other chapters ...
 
@@ -48,6 +48,8 @@ def main():
         lecture1_linear_regression.show_page()
     elif current_page == 'Tutorial 1':
         tutorial1_linear_regression.show_page()
+    elif current_page == 'Lecture 2':
+        lecture2_logistic_regression.show_page()
     # ... similarly for other pages ...
 
 if __name__ == "__main__":
