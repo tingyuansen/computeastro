@@ -29,39 +29,60 @@ def main():
     if st.sidebar.button("Home"):
         current_page = 'Home'
 
-    if st.sidebar.button("Chapter 1: Supervised Learning - Regression - Linear Regression"):
-        page = 'Chapter 1: Supervised Learning - Linear Regression'
+    if st.sidebar.button("Chapter 1: Supervised Learning - Regression"):
+        page = 'Chapter 1: Supervised Learning - Regression'
 
-    if st.sidebar.button("Tutorial 1"):
-        page = 'Tutorial 1'
+    if st.sidebar.button("Tutorial 1: Linear Regression"):
+        page = 'Tutorial 1: Linear Regression'
 
     
-    if st.sidebar.button("Chapter 2: Supervised Learning - Classification - Logistic Regression"):
-        page = 'Chapter 2: Supervised Learning - Classification - Logistic Regression'
+    if st.sidebar.button("Chapter 2: Supervised Learning - Classification"):
+        page = 'Chapter 2: Supervised Learning - Classification'
 
-    if st.sidebar.button("Tutorial 2"):
-        page = 'Tutorial 2'
+    if st.sidebar.button("Tutorial 2: Logistic Regression"):
+        page = 'Tutorial 2: Logistic Regression'
+
+
+    if st.sidebar.button("Chapter 3: Unsupervised Learning - Clustering"):
+        page = 'Chapter 3: Unsupervised Learning - Clustering'
+
+    if st.sidebar.button("Tutorial 3 - K-Means"):
+        page = 'Tutorial 3 - K-Means'
+
+    if st.sidebar.button("Tutorial 3 - Gaussian Mixture Models"):
+        page = 'Tutorial 3 - Gaussian Mixture Models'
+        
 
     
     if page == "Home":
         home.show_page()
-        
-    elif page == "Chapter 1: Supervised Learning - Linear Regression":
+
+    
+    elif page == "Chapter 1: Supervised Learning - Regression":
         lecture1_linear_regression.show_page()
         
-    elif page == "Tutorial 1":
+    elif page == "Tutorial 1: Linear Regression":
         tutorial1_linear_regression.show_page()
-        
-    elif page == "Chapter 2: Supervised Learning - Classification - Logistic Regression":
+
+    
+    elif page == "Chapter 2: Supervised Learning - Classification":
         lecture2_logistic_regression.show_page()
 
-    elif page == "Tutorial 2":
+    elif page == "Tutorial 2: Logistic Regression":
         lecture2_logistic_regression.show_page()
-        
-    elif page == "Chaper 3: Clustering - K-Means":
+
+    
+    elif page == "Chapter 3: Unsupervised Learning - Clustering":
         lecture3_clustering_kmeans.show_page()
-    elif page == "Chaper 3: Clustering - Gaussian Mixture Models":
+        
+    elif page == "Tutorial 3 - K-Means":
+        lecture3_clustering_kmeans.show_page()
+        
+    elif page == "Tutorial 3 - Gaussian Mixture Models":
         lecture3_clustering_gmm.show_page()
+
+
+    
     elif page == "Chaper 4: Dimension Reduction - Principal Component Analysis":
         lecture4_pca.show_page()
     elif page == "Chaper 5: Neural Networks - Pytorch Basics":
