@@ -24,14 +24,14 @@ def main():
 
     # Chapter 1: Linear Regression
     with st.sidebar.expander("Chapter 1: Supervised Learning - Linear Regression"):
-        if st.button("Lecture"):
+        if st.button("Lecture 1"):
             lecture1_linear_regression.show_page()
-        if st.button("Tutorial"):
+        if st.button("Tutorial 1"):
             tutorial1_linear_regression.show_page()
 
     # Chapter 2: Logistic Regression
     with st.sidebar.expander("Chapter 2: - Logistic Regression"):
-        if st.button("Tutorial"):
+        if st.button("Tutorial 2"):
             lecture2_logistic_regression.show_page()
 
     # Continue with more chapters following the same pattern
