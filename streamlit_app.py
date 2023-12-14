@@ -38,7 +38,7 @@ def main():
 
     # Chapter 10: Markov Chain Monte Carlo
     with st.sidebar.expander("Chapter 10: Markov Chain Monte Carlo"):
-        if st.button("Lecture"):
+        if st.button("Lecture 10"):
             lecture10_markov_chain_monte_carlo.show_page()
 
 if __name__ == "__main__":
