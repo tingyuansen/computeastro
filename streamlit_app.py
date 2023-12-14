@@ -17,10 +17,9 @@ def main():
 
     # Chapter 1: Linear Regression
     with st.sidebar.expander("Chapter 1: Supervised Learning - Linear Regression"):
-        if st.sidebar.button("Lecture 1"):
-            st.session_state['current_page'] = 'Lecture 1'
-        if st.sidebar.button("Tutorial 1"):
-            st.session_state['current_page'] = 'Tutorial 1'
+        chapter1_option = st.selectbox('Select Page', ['Lecture 1', 'Tutorial 1'], key='chapter1')
+        if chapter1_option:
+            st.session_state['current_page'] = chapter1_option
 
     # Chapter 2: Logistic Regression
     # ... similarly for other chapters ...
@@ -36,6 +35,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 # import streamlit as st
