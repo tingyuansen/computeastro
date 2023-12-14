@@ -29,20 +29,35 @@ def main():
     if st.sidebar.button("Home"):
         current_page = 'Home'
 
-    if st.sidebar.button("Chapter 1: Supervised Learning - Linear Regression"):
+    if st.sidebar.button("Chapter 1: Supervised Learning - Regression - Linear Regression"):
         page = 'Chapter 1: Supervised Learning - Linear Regression'
 
     if st.sidebar.button("Tutorial 1"):
         page = 'Tutorial 1'
-        
+
+    
+    if st.sidebar.button("Chapter 2: Supervised Learning - Classification - Logistic Regression"):
+        page = 'Chapter 2: Supervised Learning - Classification - Logistic Regression'
+
+    if st.sidebar.button("Tutorial 2"):
+        page = 'Tutorial 2'
+
+    
     if page == "Home":
         home.show_page()
+        
     elif page == "Chapter 1: Supervised Learning - Linear Regression":
         lecture1_linear_regression.show_page()
+        
     elif page == "Tutorial 1":
         tutorial1_linear_regression.show_page()
-    elif page == "Chaper 2: Logistic Regression":
+        
+    elif page == "Chapter 2: Supervised Learning - Classification - Logistic Regression":
         lecture2_logistic_regression.show_page()
+
+    elif page == "Tutorial 2":
+        lecture2_logistic_regression.show_page()
+        
     elif page == "Chaper 3: Clustering - K-Means":
         lecture3_clustering_kmeans.show_page()
     elif page == "Chaper 3: Clustering - Gaussian Mixture Models":
