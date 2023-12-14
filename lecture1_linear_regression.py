@@ -8,7 +8,7 @@ def show_page():
     video_url = 'https://www.youtube.com/watch?v=YG0C0r21VAw'
 
     # Page Title
-    st.title('Supervised Learning: Linear Regression')
+    st.title('Supervised Learning: Regression - Linear Regression')
 
     # Embed the external HTML page
     st.info('''
