@@ -2,58 +2,98 @@ import streamlit as st
 import home
 import tutorial1_linear_regression
 import lecture1_linear_regression
-import lecture2_logistic_regression
-import lecture3_clustering_kmeans
-import lecture3_clustering_gmm
-import lecture4_pca
-import lecture5_pytorch
-import lecture5_multilayer_perceptron
-import lecture6_autoencoder
-import lecture6_mixed_density_network
-import lecture7_gaussian_process_regression
-import lecture8_gaussian_process_classification
-import lecture9_sampling
-import lecture10_markov_chain_monte_carlo
-
+# ... import other modules ...
 
 def main():
-    st.sidebar.title('Course Content')
+    # Initialize session state
+    if 'current_page' not in st.session_state:
+        st.session_state['current_page'] = 'Home'
 
-    # Initialize the current page to 'Home'
-    current_page = 'Home'
+    st.sidebar.title('Course Content')
 
     # Home Page
     if st.sidebar.button("Home"):
-        current_page = 'Home'
+        st.session_state['current_page'] = 'Home'
 
     # Chapter 1: Linear Regression
     with st.sidebar.expander("Chapter 1: Supervised Learning - Linear Regression"):
         if st.sidebar.button("Lecture 1"):
-            current_page = 'Lecture 1'
+            st.session_state['current_page'] = 'Lecture 1'
         if st.sidebar.button("Tutorial 1"):
-            current_page = 'Tutorial 1'
+            st.session_state['current_page'] = 'Tutorial 1'
 
-    # Chapter 1: Linear Regression
-    with st.sidebar.expander("Chapter 2: Supervised Learning - Logistic Regression"):
-        if st.sidebar.button("Lecture 2"):
-            current_page = 'Lecture 2'
-            
     # Chapter 2: Logistic Regression
     # ... similarly for other chapters ...
 
     # Render the selected page
-    if current_page == 'Home':
+    if st.session_state['current_page'] == 'Home':
         home.show_page()
-    elif current_page == 'Lecture 1':
+    elif st.session_state['current_page'] == 'Lecture 1':
         lecture1_linear_regression.show_page()
-    elif current_page == 'Tutorial 1':
+    elif st.session_state['current_page'] == 'Tutorial 1':
         tutorial1_linear_regression.show_page()
-    elif current_page == 'Lecture 2':
-        lecture2_logistic_regression.show_page()
     # ... similarly for other pages ...
 
 if __name__ == "__main__":
     main()
+
+
+# import streamlit as st
+# import home
+# import tutorial1_linear_regression
+# import lecture1_linear_regression
+# import lecture2_logistic_regression
+# import lecture3_clustering_kmeans
+# import lecture3_clustering_gmm
+# import lecture4_pca
+# import lecture5_pytorch
+# import lecture5_multilayer_perceptron
+# import lecture6_autoencoder
+# import lecture6_mixed_density_network
+# import lecture7_gaussian_process_regression
+# import lecture8_gaussian_process_classification
+# import lecture9_sampling
+# import lecture10_markov_chain_monte_carlo
+
+
+# def main():
+#     st.sidebar.title('Course Content')
+
+#     # Initialize the current page to 'Home'
+#     current_page = 'Home'
+
+#     # Home Page
+#     if st.sidebar.button("Home"):
+#         current_page = 'Home'
+
+#     # Chapter 1: Linear Regression
+#     with st.sidebar.expander("Chapter 1: Supervised Learning - Linear Regression"):
+#         if st.sidebar.button("Lecture 1"):
+#             current_page = 'Lecture 1'
+#         if st.sidebar.button("Tutorial 1"):
+#             current_page = 'Tutorial 1'
+
+#     # Chapter 1: Linear Regression
+#     with st.sidebar.expander("Chapter 2: Supervised Learning - Logistic Regression"):
+#         if st.sidebar.button("Lecture 2"):
+#             current_page = 'Lecture 2'
+            
+#     # Chapter 2: Logistic Regression
+#     # ... similarly for other chapters ...
+
+#     # Render the selected page
+#     if current_page == 'Home':
+#         home.show_page()
+#     elif current_page == 'Lecture 1':
+#         lecture1_linear_regression.show_page()
+#     elif current_page == 'Tutorial 1':
+#         tutorial1_linear_regression.show_page()
+#     elif current_page == 'Lecture 2':
+#         lecture2_logistic_regression.show_page()
+#     # ... similarly for other pages ...
+
+# if __name__ == "__main__":
+#     main()
 
 
 # def main():
