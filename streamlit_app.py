@@ -1,6 +1,18 @@
 import streamlit as st
 import home
-# ... import other modules ...
+import tutorial1_linear_regression
+import lecture2_logistic_regression
+import lecture3_clustering_kmeans
+import lecture3_clustering_gmm
+import lecture4_pca
+import lecture5_pytorch
+import lecture5_multilayer_perceptron
+import lecture6_autoencoder
+import lecture6_mixed_density_network
+import lecture7_gaussian_process_regression
+import lecture8_gaussian_process_classification
+import lecture9_sampling
+import lecture10_markov_chain_monte_carlo
 
 def main():
     st.sidebar.title('Course Content')
@@ -10,16 +22,16 @@ def main():
         home.show_page()
 
     # Chapter 1: Linear Regression
-    with st.sidebar.expander("Chapter 1: Linear Regression"):
+    with st.sidebar.expander("Chapter 1: Supervised Learning - Linear Regression"):
         if st.button("Lecture"):
             lecture1_linear_regression.show_page()
-        # Add your tutorial button and page call here
+        if st.button("Tutorial"):
+            tutorial1_linear_regression.show_page()
 
     # Chapter 2: Logistic Regression
-    with st.sidebar.expander("Chapter 2: Logistic Regression"):
-        if st.button("Lecture"):
+    with st.sidebar.expander("Chapter 2: - Logistic Regression"):
+        if st.button("Tutorial"):
             lecture2_logistic_regression.show_page()
-        # Add your tutorial button and page call here
 
     # Continue with more chapters following the same pattern
 
@@ -27,7 +39,6 @@ def main():
     with st.sidebar.expander("Chapter 10: Markov Chain Monte Carlo"):
         if st.button("Lecture"):
             lecture10_markov_chain_monte_carlo.show_page()
-        # Add your tutorial button and page call here
 
 if __name__ == "__main__":
     main()
@@ -35,19 +46,7 @@ if __name__ == "__main__":
 # # main_app.py
 # import streamlit as st
 # import home
-# import lecture1_linear_regression
-# import lecture2_logistic_regression
-# import lecture3_clustering_kmeans
-# import lecture3_clustering_gmm
-# import lecture4_pca
-# import lecture5_pytorch
-# import lecture5_multilayer_perceptron
-# import lecture6_autoencoder
-# import lecture6_mixed_density_network
-# import lecture7_gaussian_process_regression
-# import lecture8_gaussian_process_classification
-# import lecture9_sampling
-# import lecture10_markov_chain_monte_carlo
+
 
 # def main():
 #     st.sidebar.title('Course Content')
