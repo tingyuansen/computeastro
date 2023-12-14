@@ -1,6 +1,7 @@
 import streamlit as st
 import home
 import tutorial1_linear_regression
+import lecture1_linear_regression
 import lecture2_logistic_regression
 import lecture3_clustering_kmeans
 import lecture3_clustering_gmm
