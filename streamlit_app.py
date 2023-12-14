@@ -110,18 +110,18 @@ def main():
         page = 'Tutorial 8: Gaussian Process Classification'
 
 
-    if st.sidebar.button("Chapter 9: Sampling"):
-        page = 'Chapter 9: Sampling'
+    if st.sidebar.button("Chapter 9: Sampling - Basic Techniques"):
+        page = 'Chapter 9: Sampling - Basic Techniques'
 
-    if st.sidebar.button("Tutorial 9: Sampling"):
-        page = 'Tutorial 9: Sampling'
+    if st.sidebar.button("Tutorial 9: Sampling - Basic Techniques"):
+        page = 'Tutorial 9: Sampling - Basic Techniques'
 
 
-    if st.sidebar.button("Chapter 10: Markov Chain Monte Carlo"):
-        page = 'Chapter 10: Markov Chain Monte Carlo'
+    if st.sidebar.button("Chapter 10: Sampling - Markov Chain Monte Carlo"):
+        page = 'Chapter 10: Sampling - Markov Chain Monte Carlo'
 
-    if st.sidebar.button("Tutorial 10: Markov Chain Monte Carlo"):
-        page = 'Tutorial 10: Markov Chain Monte Carlo'
+    if st.sidebar.button("Tutorial 10: Sampling - Markov Chain Monte Carlo"):
+        page = 'Tutorial 10: Sampling - Markov Chain Monte Carlo'
 
     
     
@@ -194,17 +194,17 @@ def main():
         tutorial8_gaussian_process_classification.show_page()
         
 
-    elif page == "Chapter 9: Sampling":
+    elif page == "Chapter 9: Sampling - Basic Techniques":
         lecture9_sampling.show_page()
 
-    elif page == "Tutorial 9: Sampling":
+    elif page == "Tutorial 9: Sampling - Basic Techniques":
         tutorial9_sampling.show_page()
 
     
-    elif page == "Chapter 10: Markov Chain Monte Carlo":
+    elif page == "Chapter 10: Sampling - Markov Chain Monte Carlo":
         lecture10_markov_chain_monte_carlo.show_page()
 
-    elif page == "Tutorial 10: Markov Chain Monte Carlo":
+    elif page == "Tutorial 10: Sampling - Markov Chain Monte Carlo":
         tutorial10_markov_chain_monte_carlo.show_page()
 
 
