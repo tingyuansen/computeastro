@@ -97,7 +97,7 @@ def main():
 
 
     if st.sidebar.button("Chapter 7: Gaussian Process Regression"):
-        page = 'Chaper 7: Gaussian Process Regression'
+        page = 'Chapter 7: Gaussian Process Regression'
 
     if st.sidebar.button("Tutorial 7: Gaussian Process Regression"):
         page = 'Tutorial 7: Gaussian Process Regression'
