@@ -15,34 +15,73 @@ import lecture8_gaussian_process_classification
 import lecture9_sampling
 import lecture10_markov_chain_monte_carlo
 
+import streamlit as st
+import home
+import tutorial1_linear_regression
+import lecture1_linear_regression
+# ... import other modules ...
+
 def main():
     st.sidebar.title('Course Content')
 
+    # Initialize the current page to 'Home'
+    current_page = 'Home'
+
     # Home Page
     if st.sidebar.button("Home"):
-        home.show_page()
+        current_page = 'Home'
 
     # Chapter 1: Linear Regression
     with st.sidebar.expander("Chapter 1: Supervised Learning - Linear Regression"):
-        if st.button("Lecture 1"):
-            lecture1_linear_regression.show_page()
-        if st.button("Tutorial 1"):
-            tutorial1_linear_regression.show_page()
+        if st.sidebar.button("Lecture 1"):
+            current_page = 'Lecture 1'
+        if st.sidebar.button("Tutorial 1"):
+            current_page = 'Tutorial 1'
 
     # Chapter 2: Logistic Regression
-    with st.sidebar.expander("Chapter 2: - Logistic Regression"):
-        if st.button("Tutorial 2"):
-            lecture2_logistic_regression.show_page()
+    # ... similarly for other chapters ...
 
-    # Continue with more chapters following the same pattern
-
-    # Chapter 10: Markov Chain Monte Carlo
-    with st.sidebar.expander("Chapter 10: Markov Chain Monte Carlo"):
-        if st.button("Lecture 10"):
-            lecture10_markov_chain_monte_carlo.show_page()
+    # Render the selected page
+    if current_page == 'Home':
+        home.show_page()
+    elif current_page == 'Lecture 1':
+        lecture1_linear_regression.show_page()
+    elif current_page == 'Tutorial 1':
+        tutorial1_linear_regression.show_page()
+    # ... similarly for other pages ...
 
 if __name__ == "__main__":
     main()
+
+
+# def main():
+#     st.sidebar.title('Course Content')
+
+#     # Home Page
+#     if st.sidebar.button("Home"):
+#         home.show_page()
+
+#     # Chapter 1: Linear Regression
+#     with st.sidebar.expander("Chapter 1: Supervised Learning - Linear Regression"):
+#         if st.button("Lecture 1"):
+#             lecture1_linear_regression.show_page()
+#         if st.button("Tutorial 1"):
+#             tutorial1_linear_regression.show_page()
+
+#     # Chapter 2: Logistic Regression
+#     with st.sidebar.expander("Chapter 2: - Logistic Regression"):
+#         if st.button("Tutorial 2"):
+#             lecture2_logistic_regression.show_page()
+
+#     # Continue with more chapters following the same pattern
+
+#     # Chapter 10: Markov Chain Monte Carlo
+#     with st.sidebar.expander("Chapter 10: Markov Chain Monte Carlo"):
+#         if st.button("Lecture 10"):
+#             lecture10_markov_chain_monte_carlo.show_page()
+
+# if __name__ == "__main__":
+#     main()
 
 # # main_app.py
 # import streamlit as st
