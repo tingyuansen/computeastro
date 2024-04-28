@@ -12,7 +12,7 @@ def show_page():
 
     # Course Description
     st.write('''
-    A comprehensive textbook delves into essential computational, statistical and data analysis techniques pivotal for daily astronomical research.
+    A comprehensive textbook will explore essential computational, statistical and data analysis techniques for daily astronomical research.
 
     In the vast canvas of the universe, deciphering astronomical data is intricately tied to advanced statistical machine learning techniques. Gaining profound insights and enhancing our understanding of the cosmos necessitates a deep dive into methodologies that seamlessly weave together the disciplines of statistics and astronomy.
 
@@ -23,7 +23,6 @@ def show_page():
 
     # Additional Course Information
     st.info('''
-    This course is developed as my teaching for honour year and Master level course ASTR 4004 / 8004 at the Australia National University.
     All copyright reserved.
     ''')
 
