@@ -12,7 +12,7 @@ def show_page():
     Course Slides
     ''')
     slideshare_embed_code = """
-        <iframe src="https://www.slideshare.net/slideshow/embed_code/key/cxXgDjfbQ7GNHM" 
+        <iframe src="" 
                 width="700" height="394" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" 
                 style="border:0px solid #000; border-width:0px; margin-bottom:0px; max-width: 100%;" allowfullscreen> 
         </iframe> 
@@ -26,7 +26,7 @@ def show_page():
         Course Video Recording
     ''')
     video_embed_code = """
-        <iframe width="700" height="394" src="https://www.youtube.com/embed/o3uhlQrpAAs?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0" frameborder="0" allowfullscreen style="border:none; max-width: 100%;"></iframe>
+        <iframe width="700" height="394" src="" frameborder="0" allowfullscreen style="border:none; max-width: 100%;"></iframe>
     """
     components.html(video_embed_code, height=412)
 
