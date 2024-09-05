@@ -3,23 +3,23 @@ import streamlit.components.v1 as components
 
 def show_page():
 
-    # Page Title
+    # # Page Title
     st.title('Supervised Learning: Regression - Linear Regression')
 
-    # Embed the external HTML page
-    st.info('''
-    Course Slides
-    ''')
-    slideshare_embed_code = """
-        <iframe src="https://www.slideshare.net/slideshow/embed_code/key/pJMT9Lqvkq3jFH" 
-                width="700" height="394" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" 
-                style="border:0px solid #000; border-width:0px; margin-bottom:0px; max-width: 100%;" allowfullscreen> 
-        </iframe> 
-    """
-    components.html(slideshare_embed_code, height=412)
+    # # Embed the external HTML page
+    # st.info('''
+    # Course Slides
+    # ''')
+    # slideshare_embed_code = """
+    #     <iframe src="https://www.slideshare.net/slideshow/embed_code/key/pJMT9Lqvkq3jFH" 
+    #             width="700" height="394" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" 
+    #             style="border:0px solid #000; border-width:0px; margin-bottom:0px; max-width: 100%;" allowfullscreen> 
+    #     </iframe> 
+    # """
+    # components.html(slideshare_embed_code, height=412)
 
-    st.markdown('---')
-    
+    # st.markdown('---')
+
     st.markdown(r'''''')
     st.markdown(r'''Welcome back, everyone! This is our first main lecture, following last Tuesday's warm-up session on Python for astronomical research. Let's start with some housekeeping:''')
     st.markdown(r'''''')
