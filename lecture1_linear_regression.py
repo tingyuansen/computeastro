@@ -20,7 +20,6 @@ def show_page():
 
     # st.markdown('---')
     
-    st.markdown(r'''# Introduction to Machine Learning in Astronomy''')
     st.markdown(r'''''')
     st.markdown(r'''## Fundamental Concepts and Course Overview''')
     st.markdown(r'''''')
