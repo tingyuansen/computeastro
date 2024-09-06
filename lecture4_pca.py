@@ -200,8 +200,6 @@ def show_page():
     st.markdown(r'''4. We calculate the covariance of $\hat{X}$, which we call $\hat{S}$.''')
     st.markdown(r'''5. We want to show that among the remaining directions, we should take the one that corresponds to the $m$-th eigenvector of the original data covariance $S$.''')
     st.markdown(r'''''')
-    st.markdown(r'''Remember, only format equations and mathematical variables. Do not make any other changes to the text structure or formatting.''')
-    st.markdown(r'''''')
     st.markdown(r'''Now, let's look at this new covariance matrix $\hat{S}$. There are some mathematical properties we need to use here. I know there are lots of bits and pieces of math involved, and it can be challenging to put them all together. But don't worry if it's not immediately clear - these days, you're just a ChatGPT query away from understanding these concepts. You don't need to take a full course to grasp all these details.''')
     st.markdown(r'''''')
     st.markdown(r'''Now, let's dive into the nitty-gritty of our proof. We want to take the covariance of $\hat{X}$, which we know can be written as $X - BB^TX$. One nice property of the covariance operation is that it's bilinear. This means we can expand it out into different quadratic terms and cross terms. It might seem a bit fuzzy, but if you write out the definition of covariance in terms of the sum over $n$ from 1 to $N$ and do the dot product, you'll see this is true.''')

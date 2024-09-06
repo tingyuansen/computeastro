@@ -55,8 +55,6 @@ def show_page():
     st.markdown(r'''''')
     st.markdown(r'''$y(x, w) = f(\sum_{j=1}^M w_j * x_j)$''')
     st.markdown(r'''''')
-    st.markdown(r'''Remember, only format equations and mathematical variables. Do not make any other changes to the text structure or formatting.''')
-    st.markdown(r'''''')
     st.markdown(r'''This by itself isn't very expressive. But here's where it gets interesting. We can make it more expressive by taking our input $x$, doing some linear stretching and shifting (our $w$ here includes a bias term, so it covers both stretching and shifting), then applying our sigmoid function, and summing up all these sigmoid functions with arbitrary weights. And guess what? We can keep doing this to make it even more expressive.''')
     st.markdown(r'''''')
     st.markdown(r'''For a two-layer network, it would look something like this:''')

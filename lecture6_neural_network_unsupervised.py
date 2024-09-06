@@ -122,8 +122,6 @@ def show_page():
     st.markdown(r'''''')
     st.markdown(r'''$L = \sum_{i=1}^N ||x_i - f(c(x_i))||^2$''')
     st.markdown(r'''''')
-    st.markdown(r'''Remember, only format equations and mathematical variables. Do not make any other changes to the text structure or formatting.''')
-    st.markdown(r'''''')
     st.markdown(r'''$\mathcal{L} = -\sum_{n=1}^N \ln P(x | c(x)) = \sum_{n=1}^N \|x_n - f(c(x_n))\|^2$''')
     st.markdown(r'''''')
     st.markdown(r'''This loss function measures the reconstruction error between the input and its reconstruction through the autoencoder.''')
