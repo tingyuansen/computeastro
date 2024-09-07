@@ -51,10 +51,7 @@ def show_page():
     st.markdown(r'''''')
     st.markdown(r'''These features, which we denote as $X$, can be high-dimensional. In many scientific contexts, $D$, the number of dimensions, can be very large. For instance, when dealing with spectra, each individual $X$ might represent thousands or even tens of thousands of dimensions. Our goal here is to partition all these features into meaningful clusters.''')
     st.markdown(r'''''')
-    st.markdown(r'''To illustrate this concept, let's consider a simple example. Even by eye, you can see that we can separate the ''')
-    st.markdown(r'''data points into two distinct clusters. However, the real challenge arises when we deal with higher dimensions - ''')
-    st.markdown(r'''three, four, or more - where visualization becomes difficult. This is why we need algorithms to help us perform ''')
-    st.markdown(r'''clustering, to identify patterns that might not be immediately apparent to the human eye.''')
+    st.markdown(r'''To illustrate this concept, let's consider a simple example. Even by eye, you can see that we can separate the data points into two distinct clusters. However, the real challenge arises when we deal with higher dimensions - three, four, or more - where visualization becomes difficult. This is why we need algorithms to help us perform clustering, to identify patterns that might not be immediately apparent to the human eye.''')
     st.markdown(r'''''')
     st.markdown(r'''For the purposes of building intuition, including in today's tutorial, we'll limit ourselves to 2D examples. But ''')
     st.markdown(r'''keep in mind that these methods can be easily generalized to very high dimensions.''')
@@ -135,7 +132,11 @@ def show_page():
     st.markdown(r'''''')
     st.markdown(r'''Next, let's define our objective function:''')
     st.markdown(r'''''')
-    st.markdown(r'''$J = \sum_{n=1}^N \sum_{k=1}^K r_{nk} ||x_n - \mu_k||^2$''')
+    st.markdown(r'''$
+$$''')
+    st.markdown(r'''J = \sum_{{}n=1{}}^N \sum_{{}k=1{}}^K r_{{}nk{}} ||x_n - \mu_k||^2''')
+    st.markdown(r'''$
+$$''')
     st.markdown(r'''''')
     st.markdown(r'''This might look intimidating, but it's straightforward. We're summing over all data points ($N$) and all clusters ($K$), calculating the squared distance between each point and its assigned cluster center. The $r_{nk}$ term ensures we only consider the distance to the assigned cluster.''')
     st.markdown(r'''''')
@@ -151,13 +152,23 @@ def show_page():
     st.markdown(r'''''')
     st.markdown(r'''1. Expectation Step (E-step):''')
     st.markdown(r'''   Fix $\mu_k$ and optimize $r_{nk}$. This is simple:''')
-    st.markdown(r'''   $r_{nk} = \{1 \mathrm{ if } k = \argmin_j ||x_n - \mu_j||^2''')
-    st.markdown(r'''           0 \mathrm{{} otherwise{}}$''')
+    st.markdown(r'''   $
+$$''')
+    st.markdown(r'''   r_{{}nk{}} = \begin{{}cases{}}''')
+    st.markdown(r'''   1 & \mathrm{{}if {}} k = \argmin_j ||x_n - \mu_j||^2 \\''')
+    st.markdown(r'''   0 & \mathrm{{}otherwise{}}''')
+    st.markdown(r'''   \end{{}cases{}}''')
+    st.markdown(r'''   $
+$$''')
     st.markdown(r'''   We're just assigning each point to its nearest cluster center.''')
     st.markdown(r'''''')
     st.markdown(r'''2. Maximization Step (M-step):''')
     st.markdown(r'''   Fix $r_{nk}$ and optimize $\mu_k$. We do this by differentiating $J$ with respect to $\mu_k$ and setting it to zero:''')
-    st.markdown(r'''   $\mu_k = (\sum_n r_{nk} x_n) / (\sum_n r_{nk})$''')
+    st.markdown(r'''   $
+$$''')
+    st.markdown(r'''   \mu_k = \frac{{}\sum_n r_{{}nk{}} x_n{}}{{}\sum_n r_{{}nk{}}{}}''')
+    st.markdown(r'''   $
+$$''')
     st.markdown(r'''   This is just the mean of all points assigned to cluster $k$.''')
     st.markdown(r'''''')
     st.markdown(r'''Let's break this down further. If we fix $r_{nk}$, optimizing $\mu_k$ is straightforward. The loss function is quadratic with respect to $\mu_k$, which means it's convex. To find the optimal point, we differentiate $J$ with respect to $\mu_k$ and set the derivative to zero. The derivative of a quadratic function is simple - it becomes two times the linear term. Setting this to zero and rearranging gives us the formula above.''')
@@ -190,7 +201,9 @@ def show_page():
     st.markdown(r'''''')
     st.markdown(r'''The simplest probabilistic model we can use for clustering is a mixture model. A mixture model means that instead of describing the distribution of features $x$ with a single Gaussian, which would be quite limiting, we can write it as the sum of different Gaussians:''')
     st.markdown(r'''''')
-    st.markdown(r'''$p(x) = \sum_{k=1}^K \pi_k \mathcal{N}(x | \mu_k, \Sigma_k)$''')
+    st.markdown(r'''$$
+p(x) = \sum_{k=1}^K \pi_k \mathcal{N}(x | \mu_k, \Sigma_k)
+$$''')
     st.markdown(r'''''')
     st.markdown(r'''Let's say we have a distribution of features $x_1$ and $x_2$ that looks like a complex, multi-modal shape. Fitting this with a single Gaussian would not do a very good job. But if we are allowed to describe it by the sum of three Gaussians, it will probably do a pretty good job.''')
     st.markdown(r'''''')
@@ -222,11 +235,15 @@ def show_page():
     st.markdown(r'''''')
     st.markdown(r'''The likelihood for a single data point is simply the evaluation of that data point using our proposed distribution. For multiple data points, assuming independent observations, the joint likelihood is the product of individual likelihoods:''')
     st.markdown(r'''''')
-    st.markdown(r'''$p({x_n} | \pi, \mu, \Sigma) = \Pi_{n=1}^N p(x_n | \pi, \mu, \Sigma)$''')
+    st.markdown(r'''$$
+p({x_n} | \pi, \mu, \Sigma) = \prod_{n=1}^N p(x_n | \pi, \mu, \Sigma)
+$$''')
     st.markdown(r'''''')
     st.markdown(r'''However, as we've learned, optimizing products can lead to numerical issues. So, we take the log of the joint distribution, giving us the log-likelihood:''')
     st.markdown(r'''''')
-    st.markdown(r'''$\ln p({x_n} | \pi, \mu, \Sigma) = \Sigma_{n=1}^N \ln(\Sigma_{k=1}^K \pi_k \mathcal{N}(x_n | \mu_k, \Sigma_k))$''')
+    st.markdown(r'''$$
+\ln p({x_n} | \pi, \mu, \Sigma) = \sum_{n=1}^N \ln\bigg(\sum_{k=1}^K \pi_k \mathcal{N}(x_n | \mu_k, \Sigma_k)\bigg)
+$$''')
     st.markdown(r'''''')
     st.markdown(r'''This optimization is very tricky because we're dealing with a sum of different Gaussians, and all the parameters have sums of sums. Maximizing this log-likelihood is much more complex than for a single Gaussian. The summation over all components makes the problem highly non-convex, and there's no closed-form analytic solution.''')
     st.markdown(r'''''')
@@ -245,15 +262,21 @@ def show_page():
     st.markdown(r'''''')
     st.markdown(r'''Let's see how this works by differentiating our log-likelihood with respect to $\mu_k$:''')
     st.markdown(r'''''')
-    st.markdown(r'''$0 = -\Sigma_{n=1}^N (\pi_k \mathcal{N}(x_n | \mu_k, \Sigma_k)) / (\Sigma_j \pi_j \mathcal{N}(x_n | \mu_j, \Sigma_j)) * \Sigma_k^{-1} (x_n - \mu_k)$''')
+    st.markdown(r'''$$
+0 = -\sum_{n=1}^N \frac{\pi_k \mathcal{N}(x_n | \mu_k, \Sigma_k)}{\sum_j \pi_j \mathcal{N}(x_n | \mu_j, \Sigma_j)} * \Sigma_k^{-1} (x_n - \mu_k)
+$$''')
     st.markdown(r'''''')
     st.markdown(r'''This looks like a complex non-linear optimization. However, we can simplify it by defining a new variable, $\gamma_{nk}$:''')
     st.markdown(r'''''')
-    st.markdown(r'''$\gamma_{nk} = (\pi_k \mathcal{N}(x_n | \mu_k, \Sigma_k)) / (\sum_j \pi_j \mathcal{N}(x_n | \mu_j, \Sigma_j))$''')
+    st.markdown(r'''$$
+\gamma_{nk} = \frac{\pi_k \mathcal{N}(x_n | \mu_k, \Sigma_k)}{\sum_j \pi_j \mathcal{N}(x_n | \mu_j, \Sigma_j)}
+$$''')
     st.markdown(r'''''')
     st.markdown(r'''With this simplification, our optimization equation becomes:''')
     st.markdown(r'''''')
-    st.markdown(r'''$0 = \sum_{n=1}^N \gamma_{nk} (x_n - \mu_k)$''')
+    st.markdown(r'''$$
+0 = \sum_{n=1}^N \gamma_{nk} (x_n - \mu_k)
+$$''')
     st.markdown(r'''''')
     st.markdown(r'''Now, let's delve deeper into how we update the parameters in Gaussian Mixture Models (GMMs). We've already discussed the concept of $\gamma_{nk}$, which is similar to $r_{nk}$ in K-means, but with a crucial difference.''')
     st.markdown(r'''''')
@@ -267,13 +290,17 @@ def show_page():
     st.markdown(r'''''')
     st.markdown(r'''Now, let's look at how we update the parameters. For the means, if we fix $\gamma_{nk}$, the optimal $\mu_k$ is given by:''')
     st.markdown(r'''''')
-    st.markdown(r'''$\mu_k = (\sum_{n=1}^N \gamma_{nk}x_n) / (\sum_{n=1}^N \gamma_{nk})$''')
+    st.markdown(r'''$$
+\mu_k = \frac{\sum_{n=1}^N \gamma_{nk}x_n}{\sum_{n=1}^N \gamma_{nk}}
+$$''')
     st.markdown(r'''''')
     st.markdown(r'''This is very similar to what we saw in K-means, just with soft assignments instead of hard ones.''')
     st.markdown(r'''''')
     st.markdown(r'''For updating the covariances, we differentiate the log-likelihood with respect to $\Sigma_k$. This leads to the update rule:''')
     st.markdown(r'''''')
-    st.markdown(r'''$\Sigma_k = (\sum_{n=1}^N \gamma_{nk}(x_n - \mu_k)(x_n - \mu_k)^T) / (\sum_{n=1}^N \gamma_{nk})$''')
+    st.markdown(r'''$$
+\Sigma_k = \frac{\sum_{n=1}^N \gamma_{nk}(x_n - \mu_k)(x_n - \mu_k)^T}{\sum_{n=1}^N \gamma_{nk}}
+$$''')
     st.markdown(r'''''')
     st.markdown(r'''This is intuitively clear. The term $(x_n - \mu_k)(x_n - \mu_k)^T$ is exactly how you would calculate the covariance. In the 1D case, to calculate the standard deviation, you take the data minus the mean and square it. In the multivariate case, it's the same idea, just now you subtract the mean in the vector space and do the dot product by transposing the vectors.''')
     st.markdown(r'''''')
@@ -289,27 +316,37 @@ def show_page():
     st.markdown(r'''''')
     st.markdown(r'''For $\pi_k$, we have the constraint $\sum_k \pi_k = 1$. To handle this, we use the Lagrange multiplier method. We optimize the likelihood while including the constraint with an auxiliary variable $\lambda$. Our total objective function becomes:''')
     st.markdown(r'''''')
-    st.markdown(r'''$L = \ln p(\{x_n\} | \pi, \mu, \Sigma) - \lambda(\sum_k \pi_k - 1)$''')
+    st.markdown(r'''$$
+L = \ln p(\{x_n\} | \pi, \mu, \Sigma) - \lambda(\sum_k \pi_k - 1)
+$$''')
     st.markdown(r'''''')
     st.markdown(r'''Now we differentiate this with respect to $\pi_k$ and set it to zero:''')
     st.markdown(r'''''')
-    st.markdown(r'''$\partial L/\partial \pi_k = \sum_n (1/p(x_n)) * \mathcal{N}(x_n | \mu_k, \Sigma_k) - \lambda = 0$''')
+    st.markdown(r'''$$
+\dfrac{\partial L}{\partial \pi_k} = \sum_n \dfrac{1}{p(x_n)} * \mathcal{N}(x_n | \mu_k, \Sigma_k) - \lambda = 0
+$$''')
     st.markdown(r'''''')
     st.markdown(r'''The first term comes from differentiating the log-likelihood, which is a sum of logs of sums with a linear term in $\pi_k$. The second term is simply $\lambda$ from differentiating the constraint term.''')
     st.markdown(r'''''')
     st.markdown(r'''Next, we multiply both sides by $\pi_k$ and sum over $k$:''')
     st.markdown(r'''''')
-    st.markdown(r'''$\sum_k \pi_k * \sum_n (1/p(x_n)) * \mathcal{N}(x_n | \mu_k, \Sigma_k) - \lambda\sum_k \pi_k = 0$''')
+    st.markdown(r'''$$
+\sum_k \pi_k * \sum_n \dfrac{1}{p(x_n)} * \mathcal{N}(x_n | \mu_k, \Sigma_k) - \lambda\sum_k \pi_k = 0
+$$''')
     st.markdown(r'''''')
     st.markdown(r'''We know that $\sum_k \pi_k = 1$, and we can show that the first term also equals $N$ (the number of data points). This means $\lambda$ must equal $-N$.''')
     st.markdown(r'''''')
     st.markdown(r'''Substituting $-N$ for $\lambda$ and multiplying only by $\pi_k$ (without summing over $k$), we get:''')
     st.markdown(r'''''')
-    st.markdown(r'''$\pi_k * \sum_n (1/p(x_n)) * \mathcal{N}(x_n | \mu_k, \Sigma_k) = N\pi_k$''')
+    st.markdown(r'''$$
+\pi_k * \sum_n \dfrac{1}{p(x_n)} * \mathcal{N}(x_n | \mu_k, \Sigma_k) = N\pi_k
+$$''')
     st.markdown(r'''''')
     st.markdown(r'''Rearranging, we arrive at the update rule for $\pi_k$:''')
     st.markdown(r'''''')
-    st.markdown(r'''$\pi_k = (1/N) * \sum_n \gamma_{nk}$''')
+    st.markdown(r'''$$
+\pi_k = \dfrac{1}{N} * \sum_n \gamma_{nk}
+$$''')
     st.markdown(r'''''')
     st.markdown(r'''This result is intuitively clear: to update the weights of individual modes, we sum up all the responsibilities. For example, if we want to know the relative importance of one mode compared to another, we sum up all the probabilities of data points belonging to that mode and divide by the total number of samples.''')
     st.markdown(r'''''')
@@ -320,16 +357,26 @@ def show_page():
     st.markdown(r'''1. Expectation Step (E-step):''')
     st.markdown(r'''   Given the current parameter estimates ($\pi$, $\mu$, $\Sigma$), we compute the responsibilities:''')
     st.markdown(r'''   ''')
-    st.markdown(r'''   $\gamma_{nk} = (\pi_k \mathcal{N}(x_n | \mu_k, \Sigma_k)) / (\sum_j \pi_j \mathcal{N}(x_n | \mu_j, \Sigma_j))$''')
+    st.markdown(r'''   $$
+\gamma_{nk} = \frac{\pi_k \mathcal{N}(x_n | \mu_k, \Sigma_k)}{\sum_j \pi_j \mathcal{N}(x_n | \mu_j, \Sigma_j)}
+$$''')
     st.markdown(r'''''')
     st.markdown(r'''   This is a Bayesian interpretation of how we should do the assignment. The ratio of likelihoods tells us how much each mode is claiming a particular data point.''')
     st.markdown(r'''''')
     st.markdown(r'''2. Maximization Step (M-step):''')
     st.markdown(r'''   Given the responsibilities, we update the parameters:''')
     st.markdown(r'''''')
-    st.markdown(r'''   $\mu_k = (\sum_n \gamma_{nk}x_n) / (\sum_n \gamma_{nk})$''')
-    st.markdown(r'''   $\Sigma_k = (\sum_n \gamma_{nk}(x_n - \mu_k)(x_n - \mu_k)^T) / (\sum_n \gamma_{nk})$''')
-    st.markdown(r'''   $\pi_k = (1/N) * \sum_n \gamma_{nk}$''')
+    st.markdown(r'''   $$
+\mu_k = \frac{\sum_n \gamma_{nk}x_n}{\sum_n \gamma_{nk}}
+$$''')
+    st.markdown(r'''   ''')
+    st.markdown(r'''   $$
+\Sigma_k = \frac{\sum_n \gamma_{nk}(x_n - \mu_k)(x_n - \mu_k)^T}{\sum_n \gamma_{nk}}
+$$''')
+    st.markdown(r'''   ''')
+    st.markdown(r'''   $$
+\pi_k = \dfrac{1}{N} \sum_n \gamma_{nk}
+$$''')
     st.markdown(r'''''')
     st.markdown(r'''   These updates are intuitive extensions of K-means:''')
     st.markdown(r'''   - For $\mu_k$, we take the weighted sum of all data points, with weights being the responsibilities.''')
