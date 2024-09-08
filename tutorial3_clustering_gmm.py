@@ -4,8 +4,6 @@ def show_page():
 
     st.markdown(r'''# Gaussian Mixture Models
 
-- By Yuan-Sen Ting, September 2023, for ASTR 4004/8004.
-
 In this lab, we delve into the fascinating world of probabilistic modeling. Utilizing a two-component Gaussian Mixture Model (GMM), we will employ the Expectation-Maximization (EM) algorithm to optimize our model's parameters to separate the alpah-rich and $\alpha$-normal disk of the Milky Way.
 
 Before diving into this lab, you should already have some familiarity with Gaussian Mixture Models and the Expectation-Maximization algorithm. These are fundamental techniques in statistical modeling and machine learning for clustering, density estimation, and exploratory data analysis. Typically, GMMs provide a way to model data as a combination of multiple Gaussian distributions, while the EM algorithm iteratively optimizes the parameters of these distributions.
