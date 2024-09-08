@@ -301,7 +301,7 @@ def show_page():
     st.markdown(r'''''')
     st.markdown(r'''The function-space perspective views a function as an infinite-dimensional vector. Before observing any data, we can draw many functions from this distribution, constrained by the kernel which represents the function's smoothness. Once we observe data points, we restrict our functional class to only those functions that pass through these points.''')
     st.markdown(r'''''')
-    st.markdown(r'''To visualize this, imagine a zero-mean Gaussian before any conditioning. With two points, $x_1$ and $x_2$ (corresponding to $t1$ and $t2$), $t_1$ and $t_2$ initially form a centered Gaussian. Observing $t_1$ determines the distribution of $t_2$, depending on the Gaussian's tilt (covariance), which represents the function's smoothness.''')
+    st.markdown(r'''To visualize this, imagine a zero-mean Gaussian before any conditioning. With two points, $x_1$ and $x_2$ (corresponding to $t_1$ and $t_2$), $t_1$ and $t_2$ initially form a centered Gaussian. Observing $t_1$ determines the distribution of $t_2$, depending on the Gaussian's tilt (covariance), which represents the function's smoothness.''')
     st.markdown(r'''''')
     st.markdown(r'''Now, consider a set of data points Y, including our training data T and a point we want to predict, $y^*$. Assuming these form a Gaussian process, we have an $(N+1) \times (N+1)$ Gaussian joint distribution. When we observe T and want to know the posterior of $y^*$, we can derive the conditional distribution analytically:''')
     st.markdown(r'''''')
