@@ -4,8 +4,6 @@ def show_page():
 
     st.markdown(r'''# K-means Clustering
 
-- By Yuan-Sen TIng, September 2023, for ASTR 4004/8004.
-
 In this lab, we explore the realm of partitioning methods in cluster analysis. Using K-means clustering, we will divide our dataset into K distinct, non-overlapping subsets to investigate the alpha-rich and α-normal disk of the Milky Way.
 
 Before diving into this lab, you should have some familiarity with K-means clustering and partitioning methods in general. These techniques are foundational in machine learning and statistical modeling for tasks such as data segmentation, cluster analysis, and feature extraction. Typically, K-means clustering categorizes data into 'K' number of centroids, and each data point belongs to the cluster with the nearest centroid.

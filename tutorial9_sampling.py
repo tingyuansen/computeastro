@@ -4,7 +4,7 @@ def show_page():
 
     st.markdown(r'''# Sampling''')
 
-    st.markdown(r'''- By Yuan-Sen Ting, September 2023, for ASTR 4004/8004.
+    st.markdown(r'''
 
 ### Assumed knowledge
 

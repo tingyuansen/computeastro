@@ -2,9 +2,7 @@ import streamlit as st
 
 def show_page():
 
-    st.markdown(r'''# Gaussian Processes Classification
-
-- By Yuan-Sen Ting, October 2023, for ASTR 4004/8004. Built upon the COMP 4670/8600 tutorial prepared by Josh Nguyen.''')
+    st.markdown(r'''# Gaussian Processes Classification''')
 
     st.markdown(r'''In the previous lab, we explored the depths of Gaussian Process Regression (GPR), equipping ourselves with the tools to model continuous data. Now, as we set our sights on the discrete universe of data, we'll uncover the elegance and utility of Gaussian Process Classification (GPC).
 

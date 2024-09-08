@@ -2,9 +2,7 @@ import streamlit as st
 
 def show_page():
 
-    st.markdown(r'''# Logistic Regression 
-
-- By Yuan-Sen Ting, August 2023, for ASTR 4004/8004.''')
+    st.markdown(r'''# Logistic Regression''')
 
     st.markdown(r'''## Introduction
 Welcome to this hands-on lab where we will dive deep into the world of logistic regression. We'll guide you through the process of building, training, and testing a logistic regression classifier. This is a fundamental machine learning algorithm used for solving classification problems, and understanding it will give you a strong foundation in machine learning.

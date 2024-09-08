@@ -2,9 +2,7 @@ import streamlit as st
 
 def show_page():
 
-    st.markdown(r'''# Gaussian Processes Regression
-
-- By Yuan-Sen Ting, October 2023, for ASTR 4004/8004. Built upon the COMP 4670/8600 tutorial prepared by Josh Nguyen.''')
+    st.markdown(r'''# Gaussian Processes Regression''')
 
     st.markdown(r'''Welcome to our lab on Gaussian process (GP) regression and classification techniques! The universe of Gaussian processes is fascinating, and understanding them is key to a myriad of applications in machine learning and beyond. In this tutorial, we will embark on a journey to explore the depths of Gaussian processes, starting from the foundational understanding of multivariate Gaussians and moving to real-world application scenarios.
 

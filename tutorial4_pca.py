@@ -2,9 +2,7 @@ import streamlit as st
 
 def show_page():
 
-    st.markdown(r'''# Principal Component Analysis
-
-- By Yuan-Sen Ting, September 2023, for ASTR 4004/8004.''')
+    st.markdown(r'''# Principal Component Analysis''')
 
     st.markdown(r'''In today's data-driven world, we're often overwhelmed by large and complex datasets. Manually analyzing this data can be time-consuming and often impractical. That's where dimensionality reduction techniques like Principal Component Analysis (PCA) come in handy. These methods help us simplify complex data into a format that's easier to work with and understand.
 

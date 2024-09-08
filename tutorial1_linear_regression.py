@@ -2,9 +2,7 @@ import streamlit as st
 
 def show_page():
 
-    st.markdown(r'''# Linear Regression
-
-- By Yuan-Sen Ting, August 2023, for ASTR 4004/8004.''')
+    st.markdown(r'''# Linear Regression''')
 
     st.markdown(r'''Welcome to today's enriching lab session! Our mission is to explore the intricacies of machine learning, specifically focusing on applying linear regression models to interpret astronomical data. We'll be working with spectra data from the Sloan Digital Sky Survey's Apache Point Observatory Galactic Evolution Experiment (SDSS APOGEE). Our goal is to employ linear regression, regularization techniques, and Bayesian Linear Regression to predict and understand the effective temperature of stars.
 

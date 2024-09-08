@@ -4,8 +4,6 @@ def show_page():
 
     st.markdown(r'''## Multi-Layer Perceptron Neural Networks for Astronomy 
 
-- By Yuan-Sen Ting, September 2023, for ASTR 4004/8004.
-
 Welcome to this exciting tutorial on building simple neural networks using PyTorch and their application in astronomy! This notebook will introduce you to the basics of neural networks, specifically multilayer perceptrons (MLP), and their use in solving regression tasks in astronomy.
 
 In this tutorial, we will start by demonstrating how to perform linear regression using PyTorch. We will discuss the limitations of linear regression models and how they may not always be suitable for certain types of regression tasks in astronomy. This discussion will lead us to explore the need for more sophisticated models, such as neural networks.

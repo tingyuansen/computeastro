@@ -2,9 +2,7 @@ import streamlit as st
 
 def show_page():
 
-    st.markdown(r'''# Markov Chain Monte Carlo
-
-**- By Yuan-Sen Ting, October 2023, for ASTR 4004/8004.**''')
+    st.markdown(r'''# Markov Chain Monte Carlo''')
 
     st.markdown(r'''### Assumed knowledge
 

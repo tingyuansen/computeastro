@@ -2,9 +2,7 @@ import streamlit as st
 
 def show_page():
 
-    st.markdown(r'''# Autoencoder
-
-- By Yuan-Sen Ting, October 2023, for ASTR 4004/8004.''')
+    st.markdown(r'''# Autoencoder''')
 
     st.markdown(r'''In today's data-driven world, we are frequently presented with large and intricate datasets. Directly dissecting this information is not only challenging but can be quite taxing. This is where neural network-based dimensionality reduction techniques, like autoencoders, become invaluable. These methods enable us to encode vast amounts of data into a more digestible format, making it easier to process and interpret.
 

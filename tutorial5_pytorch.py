@@ -4,8 +4,6 @@ def show_page():
 
     st.markdown(r'''# Introduction to Deep Learning with PyTorch
 
-- By Yuan-Sen Ting, September 2023, for ASTR 4004/8004.
-
 In this comprehensive guide, we will introduce you to PyTorch, a highly-regarded open-source deep learning framework developed by Facebook AI Research. Renowned for its flexibility, user-friendly nature, and dynamic computational graph, PyTorch facilitates effortless debugging and experimentation for developers working with deep learning models. For additional reading and resources, visit the official PyTorch [website](https://pytorch.org/) and the PyTorch GitHub [repository](https://github.com/pytorch/pytorch).
 
 Our exploration will begin with an examination of PyTorch's fundamental features, followed by a demonstration of how to create and manipulate Tensor objects – the core components of PyTorch. We will also cover a variety of algebraic operations, including matrix multiplication and elementwise multiplication, which play a vital role in constructing and training deep learning models. To further your understanding, consult the [PyTorch documentation](https://pytorch.org/docs/stable/index.html).
