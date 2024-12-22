@@ -4,7 +4,7 @@ import streamlit as st
 def navigation_menu():
     # Show a navigation menu for authenticated users
     st.sidebar.title("Course Content")
-    st.sidebar.page_link("home.py", label="Home")
+    st.sidebar.page_link("streamlit_app.py", label="Home")
     st.sidebar.markdown("Ch. 1: Linear Regression")
     st.sidebar.page_link("pages/lecture1_linear_regression.py", label="Lecture")
     st.sidebar.page_link("pages/tutorial1_linear_regression.py", label="Tutorial")
