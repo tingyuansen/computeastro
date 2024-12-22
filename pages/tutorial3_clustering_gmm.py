@@ -1,6 +1,5 @@
 import streamlit as st
-
-from home import navigation_menu
+from streamlit_app import navigation_menu
 
 def show_page():
 

@@ -1,4 +1,3 @@
-# home.py
 import streamlit as st
 
 def navigation_menu():
