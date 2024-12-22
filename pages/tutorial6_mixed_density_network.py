@@ -1,7 +1,9 @@
 import streamlit as st
+from home import navigation_menu
 
 def show_page():
 
+    navigation_menu()
     st.markdown(r'''# Mixed Density Network''')
 
     st.markdown(r'''In astronomy, we often encounter problems where we have to predict multiple possible outcomes for a given input. While traditional neural networks, such as multilayer perceptrons, output a deterministic result, Mixed Density Networks (MDNs) offer a more sophisticated approach, allowing predictions of entire probability distributions. This enables us to capture the inherent uncertainty and multimodal nature of many real-world problems.
@@ -866,5 +868,5 @@ Building on this foundation, we transitioned to a more sophisticated use case - 
 In essence, MDNs provide a versatile tool to model complex distributions in a wide range of scenarios, bridging the gap between deterministic predictions and probabilistic understanding.
 ''')
 
-if __name__ == '__main__':
-    show_page()
+#if __name__ == '__main__':
+show_page()

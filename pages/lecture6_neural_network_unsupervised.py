@@ -1,10 +1,11 @@
 import streamlit as st
-import streamlit.components.v1 as components
+from home import navigation_menu
 
 def show_page():
 
     # Page Title
     st.title('Neural Networks - Unsupervised Learning')
+    navigation_menu()
 
     # Embed the external HTML page
     # st.info('''
@@ -358,5 +359,5 @@ def show_page():
     st.markdown(r'''This lithium abundance case is essentially a one-dimensional version of many statistical problems in astronomy. The principles demonstrated here can be scaled up to higher-dimensional problems in cosmology and other areas of astrophysics. For instance, in cosmology, we might use similar techniques to model the relationship between cosmological parameters and observable features in the cosmic microwave background or large-scale structure of the universe.''')
     st.markdown(r'''''')
 
-if __name__ == '__main__':
-    show_page()
+#if __name__ == '__main__':
+show_page()

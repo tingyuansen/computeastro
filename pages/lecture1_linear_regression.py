@@ -1,10 +1,12 @@
 import streamlit as st
-import streamlit.components.v1 as components
+from home import navigation_menu
 
 def show_page():
 
     # # Page Title
     st.title('Supervised Learning: Regression - Linear Regression')
+
+    navigation_menu()
 
     # # Embed the external HTML page
     # st.info('''
@@ -445,5 +447,5 @@ def show_page():
     st.markdown(r'''''')
     st.markdown(r'''''')
 
-if __name__ == '__main__':
-    show_page()
+#if __name__ == '__main__':
+show_page()

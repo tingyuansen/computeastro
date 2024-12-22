@@ -1,11 +1,11 @@
 import streamlit as st
-import streamlit.components.v1 as components
+from home import navigation_menu
 
 def show_page():
 
     # Page Title
     st.title('Gaussian Process - Regression')
-
+    navigation_menu()
     # Embed the external HTML page
     # st.info('''
     # Course Slides
@@ -501,5 +501,5 @@ def show_page():
     st.markdown(r'''To conclude, we've covered a lot of ground today, from the theoretical foundations of Gaussian Processes to their practical applications in astronomy. Remember, it's okay if some of this still feels unclear – developing intuition for these methods takes time and practice. Gaussian Processes are powerful tools in our astronomical toolkit, especially when dealing with complex, time-varying phenomena like quasar light curves. They allow us to extract meaningful information from our data without making strong assumptions about the underlying processes. As you continue your studies and research in astronomy, you'll likely encounter more situations where these techniques can be invaluable. Thank you for your attention, and I hope you found this lecture informative and thought-provoking.''')
     st.markdown(r'''''')
 
-if __name__ == '__main__':
-    show_page()
+#if __name__ == '__main__':
+show_page()

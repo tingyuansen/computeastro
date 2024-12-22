@@ -1,7 +1,9 @@
 import streamlit as st
+from home import navigation_menu
 
 def show_page():
 
+    navigation_menu()
     st.markdown(r'''# Gaussian Processes Classification''')
 
     st.markdown(r'''In the previous lab, we explored the depths of Gaussian Process Regression (GPR), equipping ourselves with the tools to model continuous data. Now, as we set our sights on the discrete universe of data, we'll uncover the elegance and utility of Gaussian Process Classification (GPC).
@@ -824,5 +826,5 @@ In essence, this tutorial aimed to provide a balanced mix of theory and applicat
 
 ''')
 
-if __name__ == '__main__':
-    show_page()
+#if __name__ == '__main__':
+show_page()

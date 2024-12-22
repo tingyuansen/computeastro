@@ -1,7 +1,9 @@
 import streamlit as st
+from home import navigation_menu
 
 def show_page():
 
+    navigation_menu()
     st.markdown(r'''# Gaussian Processes Regression''')
 
     st.markdown(r'''Welcome to our lab on Gaussian process (GP) regression and classification techniques! The universe of Gaussian processes is fascinating, and understanding them is key to a myriad of applications in machine learning and beyond. In this tutorial, we will embark on a journey to explore the depths of Gaussian processes, starting from the foundational understanding of multivariate Gaussians and moving to real-world application scenarios.
@@ -1594,5 +1596,5 @@ To encapsulate, Gaussian Processes emerge as an indispensable asset for data ana
 
 ''')
 
-if __name__ == '__main__':
-    show_page()
+#if __name__ == '__main__':
+show_page()

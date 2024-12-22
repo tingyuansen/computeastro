@@ -1,7 +1,9 @@
 import streamlit as st
+from home import navigation_menu
 
 def show_page():
 
+    navigation_menu()
     st.markdown(r'''## Multi-Layer Perceptron Neural Networks for Astronomy 
 
 Welcome to this exciting tutorial on building simple neural networks using PyTorch and their application in astronomy! This notebook will introduce you to the basics of neural networks, specifically multilayer perceptrons (MLP), and their use in solving regression tasks in astronomy.
@@ -2038,5 +2040,5 @@ We're wrapping up this lecture on MLP. Let's review what we've learned:
 
 We hope this lecture has helped you better understand MLP and its applications in astronomy.''')
 
-if __name__ == '__main__':
-    show_page()
+#if __name__ == '__main__':
+show_page()

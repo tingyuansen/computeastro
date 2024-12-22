@@ -1,10 +1,11 @@
 import streamlit as st
-import streamlit.components.v1 as components
+from home import navigation_menu
 
 def show_page():
 
     # Page Title
     st.title('Sampling - Basic Techniques')
+    navigation_menu()
 
     # Embed the external HTML page
     # st.info('''
@@ -357,5 +358,5 @@ def show_page():
     st.markdown(r'''Throughout the tutorial, you'll have the opportunity to compare these different sampling methods, observing their relative efficiencies and accuracies. You'll see how the choice of proposal distribution in importance sampling affects the convergence rate, and how rejection sampling compares to the exact inverse CDF method in terms of computational efficiency.''')
     st.markdown(r'''''')
 
-if __name__ == '__main__':
-    show_page()
+#if __name__ == '__main__':
+show_page()

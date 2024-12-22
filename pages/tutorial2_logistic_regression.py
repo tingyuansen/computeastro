@@ -1,8 +1,10 @@
 import streamlit as st
+from home import navigation_menu
 
 def show_page():
 
     st.markdown(r'''# Logistic Regression''')
+    navigation_menu()
 
     st.markdown(r'''## Introduction
 Welcome to this hands-on lab where we will dive deep into the world of logistic regression. We'll guide you through the process of building, training, and testing a logistic regression classifier. This is a fundamental machine learning algorithm used for solving classification problems, and understanding it will give you a strong foundation in machine learning.
@@ -1152,5 +1154,5 @@ In this comprehensive tutorial, we embarked on a journey through the landscape o
 The power of logistic regression lies not just in its simplicity but also in its versatility. As we've shown, it can be adapted and fine-tuned in various ways to fit specific needs and challenges. Whether you're just getting started in machine learning or you're a seasoned practitioner, we hope this tutorial has provided you with valuable insights into the inner workings, optimization, and evaluation of logistic regression models.
 ''')
 
-if __name__ == '__main__':
-    show_page()
+#if __name__ == '__main__':
+show_page()

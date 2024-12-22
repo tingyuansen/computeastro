@@ -1,7 +1,9 @@
 import streamlit as st
+from home import navigation_menu
 
 def show_page():
 
+    navigation_menu()
     st.markdown(r'''# Principal Component Analysis''')
 
     st.markdown(r'''In today's data-driven world, we're often overwhelmed by large and complex datasets. Manually analyzing this data can be time-consuming and often impractical. That's where dimensionality reduction techniques like Principal Component Analysis (PCA) come in handy. These methods help us simplify complex data into a format that's easier to work with and understand.
@@ -501,5 +503,5 @@ This tutorial provided a hands-on approach to understanding PCA's theory and imp
 4. **Image Reconstruction**: We showed how to reconstruct Pokemon images using varying numbers of principal components, revealing a trade-off between data compression and information loss.
 ''')
 
-if __name__ == '__main__':
-    show_page()
+#if __name__ == '__main__':
+show_page()

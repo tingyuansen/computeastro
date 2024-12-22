@@ -1,10 +1,12 @@
 import streamlit as st
-import streamlit.components.v1 as components
+from home import navigation_menu
 
 def show_page():
 
     # Page Title
     st.title('Supervised Learning: Classification - Logistic Regression')
+
+    navigation_menu()
 
     # Embed the external HTML page
     # st.info('''
@@ -387,5 +389,5 @@ def show_page():
     st.markdown(r'''In future discussions, we'll delve into unsupervised learning techniques, exploring how we can find patterns and structure in data without explicit labels. This will include topics like clustering and dimensionality reduction, which are crucial in many scientific applications.''')
     st.markdown(r'''''')
 
-if __name__ == '__main__':
-    show_page()
+#if __name__ == '__main__':
+show_page()

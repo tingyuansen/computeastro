@@ -1,10 +1,11 @@
 import streamlit as st
-import streamlit.components.v1 as components
+from home import navigation_menu
 
 def show_page():
 
     # Page Title
     st.title('Gaussian Process - Classification')
+    navigation_menu()
 
     # Embed the external HTML page
     # st.info('''
@@ -440,5 +441,5 @@ def show_page():
     st.markdown(r'''In conclusion, GPC is a powerful tool that provides flexible decision boundaries and uncertainty estimates, making it ideal for many astronomical classification tasks. It excels at finding boundaries without explicitly defining features, thanks to the kernel trick. And it gives us a Bayesian version of classification, allowing us to quantify the uncertainty of the boundary based on the density of the training data. Understanding its derivation gives you insights into handling complex statistical problems, even if in practice you'll mostly be using the final formula we derived today.''')
     st.markdown(r'''''')
 
-if __name__ == '__main__':
-    show_page()
+#if __name__ == '__main__':
+show_page()

@@ -1,7 +1,9 @@
 import streamlit as st
+from home import navigation_menu
 
 def show_page():
 
+    navigation_menu()
     st.markdown(r'''# Sampling''')
 
     st.markdown(r'''
@@ -1171,5 +1173,5 @@ The Kroupa Initial Mass Function (IMF) is a pivotal distribution in astrophysics
 
 In summary, we have navigated the nuances and applicabilities of various sampling methods in this tutorial. These methodologies, while presented in the context of astrophysics, have broader applications across numerous domains in science and engineering. The endeavor underscores the importance of rigorous statistical techniques in extracting meaningful information from complex distributions.''')
 
-if __name__ == '__main__':
-    show_page()
+#if __name__ == '__main__':
+show_page()

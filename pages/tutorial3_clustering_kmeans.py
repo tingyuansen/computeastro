@@ -1,7 +1,9 @@
 import streamlit as st
+from home import navigation_menu
 
 def show_page():
 
+    navigation_menu()
     st.markdown(r'''# K-means Clustering
 
 In this lab, we explore the realm of partitioning methods in cluster analysis. Using K-means clustering, we will divide our dataset into K distinct, non-overlapping subsets to investigate the alpha-rich and α-normal disk of the Milky Way.
@@ -551,5 +553,5 @@ This tutorial provides a comprehensive walkthrough on how to implement and optim
 8. **Limitations and Alternatives**: An exploration of why K-means may not be ideal for all data shapes and what alternatives, like Gaussian Mixture Models, can be considered.
 ''')
 
-if __name__ == '__main__':
-    show_page()
+#if __name__ == '__main__':
+show_page()

@@ -1,10 +1,10 @@
 import streamlit as st
-import streamlit.components.v1 as components
-
+from home import navigation_menu
 def show_page():
 
     # Page Title
     st.title('Unsupervised Learning: Clustering - K-means and Gaussian Mixture Models')
+    navigation_menu()
 
     # # Embed the external HTML page
     # st.info('''
@@ -380,5 +380,5 @@ def show_page():
     st.markdown(r'''To wrap up, we've covered one key task in unsupervised learning: clustering and density approximation. We started with K-means, which is simple but limited, and then moved to GMMs, which offer a more probabilistic approach. We've seen that even for these relatively simple models, optimization requires more sophisticated techniques like expectation-maximization, rather than just gradient descent.''')
     st.markdown(r'''''')
 
-if __name__ == '__main__':
-    show_page()
+#if __name__ == '__main__':
+show_page()

@@ -1,7 +1,9 @@
 import streamlit as st
+from home import navigation_menu
 
 def show_page():
 
+    navigation_menu()
     st.markdown(r'''# Markov Chain Monte Carlo''')
 
     st.markdown(r'''### Assumed knowledge
@@ -1072,5 +1074,5 @@ Understanding the underlying mechanics, strengths, and limitations of these algo
 Through the specific examples and broader discussions presented, this tutorial underscores the essential role of MCMC methods in modern statistics and the fascinating interplay of theory and practice they bring to the table.
 ''')
 
-if __name__ == '__main__':
-    show_page()
+#if __name__ == '__main__':
+show_page()

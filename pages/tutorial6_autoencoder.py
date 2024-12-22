@@ -1,7 +1,9 @@
 import streamlit as st
+from home import navigation_menu
 
 def show_page():
 
+    navigation_menu()
     st.markdown(r'''# Autoencoder''')
 
     st.markdown(r'''In today's data-driven world, we are frequently presented with large and intricate datasets. Directly dissecting this information is not only challenging but can be quite taxing. This is where neural network-based dimensionality reduction techniques, like autoencoders, become invaluable. These methods enable us to encode vast amounts of data into a more digestible format, making it easier to process and interpret.
@@ -994,5 +996,5 @@ In essence, autoencoders are a potent tool in the machine learning toolkit. Whil
 Thank you for joining us on this exploration of autoencoders. We hope you found it enlightening and are now equipped with deeper insights and tools for your own projects!
 ''')
 
-if __name__ == '__main__':
-    show_page()
+#if __name__ == '__main__':
+show_page()

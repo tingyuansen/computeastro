@@ -1,10 +1,10 @@
 import streamlit as st
-import streamlit.components.v1 as components
-
+from home import navigation_menu
 def show_page():
 
     # Page Title
     st.title('Unsupervised Learning: Dimension Reduction - Principal Component Analysis')
+    navigation_menu()
 
     # # Embed the external HTML page
     # st.info('''
@@ -413,5 +413,5 @@ def show_page():
     st.markdown(r'''In your future research, you'll find that PCA is an invaluable tool in your data analysis toolkit. It's a perfect example of how a relatively simple mathematical concept can lead to profound insights in astronomy.''')
     st.markdown(r'''''')
 
-if __name__ == '__main__':
-    show_page()
+#if __name__ == '__main__':
+show_page()

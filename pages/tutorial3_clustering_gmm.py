@@ -1,7 +1,10 @@
 import streamlit as st
 
+from home import navigation_menu
+
 def show_page():
 
+    navigation_menu()
     st.markdown(r'''# Gaussian Mixture Models
 
 In this lab, we delve into the fascinating world of probabilistic modeling. Utilizing a two-component Gaussian Mixture Model (GMM), we will employ the Expectation-Maximization (EM) algorithm to optimize our model's parameters to separate the alpah-rich and $\alpha$-normal disk of the Milky Way.
@@ -783,5 +786,5 @@ This tutorial provides a comprehensive walkthrough on how to implement and optim
 
 ''')
 
-if __name__ == '__main__':
-    show_page()
+#if __name__ == '__main__':
+show_page()

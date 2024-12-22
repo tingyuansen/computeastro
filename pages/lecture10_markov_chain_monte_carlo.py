@@ -1,10 +1,11 @@
 import streamlit as st
-import streamlit.components.v1 as components
+from home import navigation_menu
 
 def show_page():
 
     # Page Title
     st.title('Sampling - Markov Chain Monte Carlo')
+    navigation_menu()
 
     # Embed the external HTML page
     # st.info('''
@@ -392,5 +393,5 @@ def show_page():
     st.markdown(r'''These tools, when understood deeply, will empower you to tackle complex probabilistic problems in astronomy and beyond. Remember, the journey from a simple idea – taking a random walk guided by probability ratios – to a powerful tool for probing the mysteries of the universe is a testament to the beauty and power of computational statistics.''')
     st.markdown(r'''''')
 
-if __name__ == '__main__':
-    show_page()
+#if __name__ == '__main__':
+show_page()

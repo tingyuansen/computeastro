@@ -1,7 +1,9 @@
 import streamlit as st
+from home import navigation_menu
 
 def show_page():
 
+    navigation_menu()
     st.markdown(r'''# Introduction to Deep Learning with PyTorch
 
 In this comprehensive guide, we will introduce you to PyTorch, a highly-regarded open-source deep learning framework developed by Facebook AI Research. Renowned for its flexibility, user-friendly nature, and dynamic computational graph, PyTorch facilitates effortless debugging and experimentation for developers working with deep learning models. For additional reading and resources, visit the official PyTorch [website](https://pytorch.org/) and the PyTorch GitHub [repository](https://github.com/pytorch/pytorch).
@@ -1805,5 +1807,5 @@ While these libraries offer powerful and optimized tools to build, train, and de
 
 Remember, it's not just about using powerful tools; it's about understanding the fundamental concepts that make them so powerful. Now that you have a deeper insight into backpropagation and neural networks, you are better equipped to leverage the full potential of machine learning packages like PyTorch and TensorFlow in your future projects. Happy learning!''')
 
-if __name__ == '__main__':
-    show_page()
+#if __name__ == '__main__':
+show_page()
