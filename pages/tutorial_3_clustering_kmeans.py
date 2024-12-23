@@ -2,6 +2,8 @@ import streamlit as st
 from streamlit_app import navigation_menu
 
 def show_page():
+    st.set_page_config(page_title="Comp Astro",
+                       page_icon="https://raw.githubusercontent.com/teaghan/astronomy-12/main/images/tutor_favicon.png", layout="wide")
 
     navigation_menu()
     st.markdown(r'''# K-means Clustering
