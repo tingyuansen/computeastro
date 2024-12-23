@@ -1,8 +1,6 @@
 import streamlit as st
 
 def navigation_menu():
-    st.set_page_config(page_title="Comp Astro",
-                       page_icon="https://raw.githubusercontent.com/teaghan/astronomy-12/main/images/tutor_favicon.png", layout="wide")
     # Show a navigation menu for authenticated users
     st.sidebar.title("Course Content")
     st.sidebar.page_link("streamlit_app.py", label="Home")
@@ -39,6 +37,9 @@ def navigation_menu():
     st.sidebar.markdown("Ch. 10: Markov Chain Monte Carlo")
     st.sidebar.page_link("pages/lecture_10_markov_chain_monte_carlo.py", label="Lecture")
     st.sidebar.page_link("pages/tutorial_10_markov_chain_monte_carlo.py", label="Tutorial")
+
+st.set_page_config(page_title="Comp Astro",
+                       page_icon="https://raw.githubusercontent.com/teaghan/astronomy-12/main/images/tutor_favicon.png", layout="wide")
 
 # Page Title
 st.title('A Beginner Guide to Astro-Statistics and Astro-Machine-Learning')
