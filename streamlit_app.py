@@ -39,7 +39,7 @@ def navigation_menu():
     st.sidebar.page_link("pages/tutorial_10_markov_chain_monte_carlo.py", label="Tutorial")
 
 st.set_page_config(page_title="Comp Astro",
-                       page_icon="https://raw.githubusercontent.com/teaghan/astronomy-12/main/images/tutor_favicon.png", layout="wide")
+                       page_icon="./image/tutor_favicon.png", layout="wide")
 
 # Page Title
 st.title('A Beginner Guide to Astro-Statistics and Astro-Machine-Learning')

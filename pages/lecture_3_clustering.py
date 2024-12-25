@@ -3,7 +3,7 @@ from streamlit_app import navigation_menu
 
 def show_page():
     st.set_page_config(page_title="Comp Astro",
-                       page_icon="https://raw.githubusercontent.com/teaghan/astronomy-12/main/images/tutor_favicon.png", layout="wide")
+                       page_icon="./image/tutor_favicon.png", layout="wide")
 
     # Page Title
     st.title('Unsupervised Learning: Clustering - K-means and Gaussian Mixture Models')
