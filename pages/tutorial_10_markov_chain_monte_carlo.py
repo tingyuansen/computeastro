@@ -1,5 +1,5 @@
 import streamlit as st
-from streamlit_app import navigation_menu
+from menu import navigation_menu
 
 def show_page():
     st.set_page_config(page_title="Comp Astro",
